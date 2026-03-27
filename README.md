@@ -2,14 +2,15 @@
 
 ### 🛠️ Software Engineering Co-op @ Philips | CS @ Northeastern University
 
-I am a **Software System Integration Engineer** currently automating critical testing workflows for patient monitoring platforms at **Philips**. I specialize in bridging the gap between legacy systems and modern enterprise healthcare infrastructure.
+I am a **Software Systems Engineer** currently automating critical testing workflows for patient monitoring platforms at **Philips**. I specialize in bridging the gap between legacy systems and modern enterprise healthcare infrastructure.
 
 ---
 
 ## 🔗 Quick Links
-- **Portfolio:** [whoisaldo.github.io/Portfolio](https://whoisaldo.github.io/Portfolio)
+- **Portfolio:** [https://Aliyounes.dev](https://Aliyounes.dev)
 - **LinkedIn:** [linkedin.com/in/Ali-Younes](https://www.linkedin.com/in/ali-younes-41a2b4296/)
-- **Email:** [Younes.al@Northeastern.edu](mailto:Younes.al@Northeastern.edu)
+- **UniEmail:** [Younes.al@Northeastern.edu](mailto:Younes.al@Northeastern.edu)
+- **PersonalEmail:** [Aliyounes@eternalreverse.com](mailto:Aliyounes@eternalreverse.com)
 
 ---
 
