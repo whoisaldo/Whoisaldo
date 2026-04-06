@@ -1,0 +1,13 @@
+<svg width="700" height="12" viewBox="0 0 700 12" xmlns="http://www.w3.org/2000/svg">
+  <rect width="700" height="12" fill="#0D1117"/>
+  <rect x="0" y="4" width="50" height="4" rx="2" fill="#00F0FF" opacity="0.4"/>
+  <rect x="60" y="4" width="150" height="4" rx="2" fill="#00F0FF"/>
+  <rect x="220" y="4" width="30" height="4" rx="2" fill="#00F0FF" opacity="0.5"/>
+  <rect x="260" y="4" width="260" height="4" rx="2" fill="#00F0FF"/>
+  <rect x="530" y="4" width="20" height="4" rx="2" fill="#00F0FF" opacity="0.3"/>
+  <rect x="560" y="4" width="140" height="4" rx="2" fill="#00F0FF"/>
+  <!-- glow layer -->
+  <rect x="60" y="3" width="150" height="6" rx="3" fill="#00F0FF" opacity="0.15"/>
+  <rect x="260" y="3" width="260" height="6" rx="3" fill="#00F0FF" opacity="0.15"/>
+  <rect x="560" y="3" width="140" height="6" rx="3" fill="#00F0FF" opacity="0.15"/>
+</svg>
