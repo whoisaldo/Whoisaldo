@@ -99,7 +99,7 @@ interests:  ["Systems engineering", "Developer tooling", "Fitness", "German car 
 [INFO]  Northeastern ............... CS + PoliSci · graduating May 2027
 [LIVE]  Powerlifting ............... ongoing
 [LIVE]  Audi S4 B8.5 ............... german car go brrr
-[WARN]  Sleep schedule ............. undefined
+[WARN]  Sleep schedule ............. undefined....
 ```
 
 <div align="center">
