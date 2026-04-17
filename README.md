@@ -9,7 +9,7 @@
 ╚═╝  ╚═╝╚══════╝╚═════╝  ╚═════╝ 
 ```
 
-<img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=700&size=16&duration=2000&pause=500&color=FFE600&center=true&vCenter=true&width=650&lines=Software+Engineering+Co-op+%40+Philips+Healthcare;CS+%2B+Political+Science+%40+Northeastern+%2727;From+systems+programming+to+full-stack+products;Rust+%7C+Swift+%7C+C%23+%7C+React+%7C+Python+%7C+PowerShell" alt="Typing SVG" />
+<img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=700&size=16&duration=2000&pause=500&color=FFE600&center=true&vCenter=true&width=650&lines=Incoming+SDE+Intern+%40+Amazon+%7C+Seattle%2C+WA;Software+Engineering+Co-op+%40+Philips+Healthcare;CS+%2B+Political+Science+%40+Northeastern+%2727;From+systems+programming+to+full-stack+products;Rust+%7C+Swift+%7C+C%23+%7C+React+%7C+Python+%7C+PowerShell" alt="Typing SVG" />
 
 <br/>
 
@@ -26,14 +26,15 @@
 ## `> whoami`
 
 ```yaml
-role:       "Software Engineering Co-op @ Philips Healthcare"
+role:       "Incoming SDE Intern @ Amazon · Software Engineering Co-op @ Philips Healthcare"
 focus:      "Systems programming, automation, full-stack product development"
-location:   "Boston, MA"
+location:   "Boston, MA → Seattle, WA"
 education:
   school:   "Northeastern University"
   majors:   ["Computer Science", "Political Science"]
   grad:     2027
 current_work:
+  - "Amazon            — incoming SDE Intern, Seattle, WA"
   - "EternalMonitor    — low-latency iPad display receiver, Rust + Swift, v0.1.1-mirror"
   - "EternalRichPres   — Discord × Apple Music/Spotify bridge, v1.0.0-beta shipped"
   - "Exerly Fitness    — SwiftUI iOS app + React web platform, AI coaching via Gemini"
@@ -92,6 +93,7 @@ interests:  ["Systems engineering", "Developer tooling", "Fitness", "German car 
 ## `> tail -f ./now.log`
 
 ```
+[NEXT]  Amazon ..................... incoming SDE Intern · Seattle, WA
 [INFO]  EternalMonitor ............. v0.1.1-mirror · AMD encoder fix shipped Apr 4
 [INFO]  EternalRichPresence ........ v1.0.0-beta live
 [INFO]  Exerly Fitness ............. web live · iOS in active dev
