@@ -14,7 +14,7 @@
 <br/>
 
 [![Portfolio](https://img.shields.io/badge/PORTFOLIO-aliyounes.dev-FFE600?style=for-the-badge&labelColor=0D1117)](https://aliyounes.dev)
-[![LinkedIn](https://img.shields.io/badge/LINKEDIN-connect-FF2D78?style=for-the-badge&labelColor=0D1117)](https://www.linkedin.com/in/ali-younes-41a2b4296/)
+[![LinkedIn](https://img.shields.io/badge/LINKEDIN-connect-FF2D78?style=for-the-badge&labelColor=0D1117)](https://www.linkedin.com/in/alialdoyounes/)
 [![Email](https://img.shields.io/badge/EMAIL-reach+out-00F0FF?style=for-the-badge&labelColor=0D1117)](mailto:aliyounes@eternalreverse.com)
 
 </div>
