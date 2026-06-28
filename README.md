@@ -1,13 +1,6 @@
 <div align="center">
 
-```
- █████╗ ██╗     ██████╗  ██████╗ 
-██╔══██╗██║     ██╔══██╗██╔═══██╗
-███████║██║     ██║  ██║██║   ██║
-██╔══██║██║     ██║  ██║██║   ██║
-██║  ██║███████╗██████╔╝╚██████╔╝
-╚═╝  ╚═╝╚══════╝╚═════╝  ╚═════╝ 
-```
+<img src="./hero.svg" width="100%" alt="ALDO — SDE @ Amazon · Systems // Full-Stack" />
 
 <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=700&size=16&duration=2000&pause=500&color=FFE600&center=true&vCenter=true&width=650&lines=SDE+Intern+%40+Amazon+%7C+Seattle%2C+WA;Software+Engineering+Co-op+%40+Philips+Healthcare;CS+%2B+Political+Science+%40+Northeastern+%2727;From+systems+programming+to+full-stack+products;Rust+%7C+Swift+%7C+C%23+%7C+React+%7C+Python+%7C+PowerShell" alt="Typing SVG" />
 
@@ -18,8 +11,6 @@
 [![Email](https://img.shields.io/badge/EMAIL-reach+out-00F0FF?style=for-the-badge&labelColor=0D1117)](mailto:aliyounes@eternalreverse.com)
 
 </div>
-
----
 
 <div align="center"><img src="./divider_pink.svg" width="700" /></div>
 
@@ -89,6 +80,19 @@ interests:  ["Systems engineering", "Developer tooling", "Fitness", "German car 
 
 <div align="center"><img src="./divider_pink.svg" width="700" /></div>
 
+## `> btop --user aldo`
+
+<div align="center">
+
+<img height="165" src="https://github-readme-stats.vercel.app/api?username=whoisaldo&show_icons=true&include_all_commits=true&count_private=true&hide_border=true&bg_color=0A0A0F&title_color=00F0FF&text_color=EAFEFF&icon_color=FF2D78&rank_icon=github" alt="stats" />
+<img height="165" src="https://github-readme-stats.vercel.app/api/top-langs/?username=whoisaldo&layout=compact&langs_count=8&hide_border=true&bg_color=0A0A0F&title_color=00F0FF&text_color=EAFEFF" alt="top languages" />
+
+<img src="https://github-readme-streak-stats.herokuapp.com/?user=whoisaldo&hide_border=true&background=0A0A0F&stroke=00F0FF&ring=FF2D78&fire=FFE600&currStreakLabel=00F0FF&sideLabels=EAFEFF&currStreakNum=EAFEFF&sideNums=EAFEFF&dates=5B6470" alt="streak" />
+
+</div>
+
+<div align="center"><img src="./divider_cyan.svg" width="700" /></div>
+
 ## `> tail -f ./now.log`
 
 ```
@@ -104,5 +108,11 @@ interests:  ["Systems engineering", "Developer tooling", "Fitness", "German car 
 ```
 
 <div align="center">
+
+<br/>
+
+[![Visitors](https://komarev.com/ghpvc/?username=whoisaldo&style=for-the-badge&color=FF2D78&labelColor=0D1117&label=DATA_RUNNERS)](https://github.com/whoisaldo)
+
 <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=700&size=13&duration=4000&pause=1000&color=FFE600&center=true&vCenter=true&width=500&lines=let%27s+build+something%2C+choom.;_" alt="footer" />
+
 </div>

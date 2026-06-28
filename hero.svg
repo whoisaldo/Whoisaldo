@@ -1,0 +1,117 @@
+<svg width="900" height="280" viewBox="0 0 900 280" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="ALDO — SDE @ Amazon">
+  <defs>
+    <style><![CDATA[
+      :root{ --cy:#00F0FF; --mg:#FF2D78; --yl:#FFE600; }
+      .hud{ font-family:'JetBrains Mono','Fira Code',ui-monospace,SFMono-Regular,Menlo,Consolas,monospace; }
+      .cyan{ transform:translate(-3px,0); animation:jcy 4s steps(1,end) infinite; }
+      .mag { transform:translate(3px,0);  animation:jmg 4s steps(1,end) infinite; }
+      .main{ animation:flk 4s linear infinite; }
+      .sweep{ animation:swp 7s linear infinite; }
+      .cur { animation:blink 1.06s steps(1,end) infinite; }
+      .dot { animation:blink 1.4s steps(1,end) infinite; }
+      .bar { animation:barpulse 3.2s ease-in-out infinite; }
+      @keyframes jcy{
+        0%,84%,100%{transform:translate(-3px,0)}
+        86%{transform:translate(-9px,1px)} 88%{transform:translate(2px,-1px)}
+        90%{transform:translate(-6px,2px)} 92%{transform:translate(-3px,0)}
+        95%{transform:translate(-10px,-2px)} 97%{transform:translate(-3px,0)}
+      }
+      @keyframes jmg{
+        0%,84%,100%{transform:translate(3px,0)}
+        86%{transform:translate(9px,-1px)} 88%{transform:translate(-2px,1px)}
+        90%{transform:translate(6px,-2px)} 92%{transform:translate(3px,0)}
+        95%{transform:translate(10px,2px)} 97%{transform:translate(3px,0)}
+      }
+      @keyframes flk{
+        0%,100%{opacity:1} 86%{opacity:.5} 87%{opacity:1}
+        91%{opacity:.72} 92%{opacity:1} 96%{opacity:.38} 97%{opacity:1}
+      }
+      @keyframes swp{ 0%{transform:translateY(-70px)} 100%{transform:translateY(290px)} }
+      @keyframes blink{ 0%,52%{opacity:1} 53%,100%{opacity:0} }
+      @keyframes barpulse{ 0%,100%{opacity:.35} 50%{opacity:.9} }
+    ]]></style>
+
+    <radialGradient id="vig" cx="50%" cy="44%" r="72%">
+      <stop offset="52%" stop-color="#0A0A0F" stop-opacity="0"/>
+      <stop offset="100%" stop-color="#0A0A0F" stop-opacity="0.92"/>
+    </radialGradient>
+    <pattern id="grid" width="34" height="34" patternUnits="userSpaceOnUse">
+      <path d="M34 0 H0 V34" fill="none" stroke="#00F0FF" stroke-width="0.5" opacity="0.06"/>
+    </pattern>
+    <pattern id="scan" width="3" height="3" patternUnits="userSpaceOnUse">
+      <rect width="3" height="1" fill="#000000" opacity="0.22"/>
+    </pattern>
+    <linearGradient id="sweepg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#00F0FF" stop-opacity="0"/>
+      <stop offset="0.5" stop-color="#00F0FF" stop-opacity="0.14"/>
+      <stop offset="1" stop-color="#00F0FF" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="barg" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#FF2D78" stop-opacity="0"/>
+      <stop offset="0.5" stop-color="#FF2D78" stop-opacity="1"/>
+      <stop offset="1" stop-color="#FFE600" stop-opacity="0"/>
+    </linearGradient>
+
+    <filter id="glow" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur stdDeviation="4" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="soft" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur stdDeviation="1.4"/>
+    </filter>
+    <filter id="halo" x="-80%" y="-80%" width="260%" height="260%">
+      <feGaussianBlur stdDeviation="13"/>
+    </filter>
+
+    <!-- ALDO wordmark: angular geometric letterforms, recolored per copy via currentColor -->
+    <g id="word" fill="none" stroke="currentColor" stroke-width="16" stroke-linecap="square" stroke-linejoin="miter">
+      <g transform="translate(175,58)"><path d="M8,140 L50,8 L92,140"/><path d="M28,94 L72,94"/></g>
+      <g transform="translate(325,58)"><path d="M18,8 L18,140 L92,140"/></g>
+      <g transform="translate(475,58)"><path d="M18,140 L18,8 L62,8 L92,38 L92,110 L62,140 Z"/></g>
+      <g transform="translate(625,58)"><path d="M30,8 L70,8 L92,38 L92,110 L70,140 L30,140 L8,110 L8,38 Z"/></g>
+    </g>
+  </defs>
+
+  <!-- backdrop -->
+  <rect width="900" height="280" fill="#0A0A0F"/>
+  <rect width="900" height="280" fill="url(#grid)"/>
+  <rect width="900" height="280" fill="url(#vig)"/>
+
+  <!-- animated scan sweep -->
+  <rect class="sweep" x="0" y="0" width="900" height="70" fill="url(#sweepg)"/>
+
+  <!-- wordmark stack: halo -> cyan split -> magenta split -> bright core -->
+  <use href="#word" color="#00F0FF" filter="url(#halo)" opacity="0.35"/>
+  <use href="#word" class="cyan" color="#00F0FF" filter="url(#soft)" opacity="0.9" style="mix-blend-mode:screen"/>
+  <use href="#word" class="mag"  color="#FF2D78" filter="url(#soft)" opacity="0.9" style="mix-blend-mode:screen"/>
+  <use href="#word" class="main" color="#EAFEFF" filter="url(#glow)"/>
+
+  <!-- neon underline / data bar -->
+  <rect x="183" y="214" width="534" height="2" rx="1" fill="#FF2D78" opacity="0.25"/>
+  <rect class="bar" x="183" y="213" width="534" height="3" rx="1.5" fill="url(#barg)"/>
+
+  <!-- subtitle -->
+  <text class="hud" x="450" y="244" text-anchor="middle" font-size="15" letter-spacing="4" fill="#FFE600">
+    &gt; SDE @ AMAZON<tspan fill="#5b6470">  ::  </tspan><tspan fill="#EAFEFF">SYSTEMS</tspan><tspan fill="#5b6470"> // </tspan><tspan fill="#EAFEFF">FULL-STACK</tspan><tspan class="cur" fill="#00F0FF"> _</tspan>
+  </text>
+
+  <!-- HUD corner brackets -->
+  <g fill="none" stroke="#00F0FF" stroke-width="1.5" opacity="0.8">
+    <path d="M14,40 L14,14 L40,14"/>
+    <path d="M860,14 L886,14 L886,40"/>
+    <path d="M14,240 L14,266 L40,266"/>
+    <path d="M860,266 L886,266 L886,240"/>
+  </g>
+
+  <!-- HUD micro labels -->
+  <g class="hud" font-size="10.5" letter-spacing="1.5">
+    <text x="46" y="22" fill="#00F0FF" opacity="0.7">WHOISALDO.EXE</text>
+    <text x="854" y="22" text-anchor="end" fill="#00F0FF" opacity="0.7">SYS://ONLINE</text>
+    <circle class="dot" cx="864" cy="18.5" r="3" fill="#39FF7A"/>
+    <text x="46" y="262" fill="#FF2D78" opacity="0.75">LOC: SEATTLE.WA</text>
+    <text x="854" y="262" text-anchor="end" fill="#FFE600" opacity="0.7">BUILD//2027</text>
+  </g>
+
+  <!-- CRT scanline overlay -->
+  <rect width="900" height="280" fill="url(#scan)" pointer-events="none"/>
+</svg>
