@@ -84,10 +84,10 @@ interests:  ["Systems engineering", "Developer tooling", "Fitness", "German car 
 
 <div align="center">
 
-<img height="165" src="https://github-readme-stats.vercel.app/api?username=whoisaldo&show_icons=true&include_all_commits=true&count_private=true&hide_border=true&bg_color=0A0A0F&title_color=00F0FF&text_color=EAFEFF&icon_color=FF2D78&rank_icon=github" alt="stats" />
-<img height="165" src="https://github-readme-stats.vercel.app/api/top-langs/?username=whoisaldo&layout=compact&langs_count=8&hide_border=true&bg_color=0A0A0F&title_color=00F0FF&text_color=EAFEFF" alt="top languages" />
+<img height="165" src="https://github-readme-stats.vercel.app/api?username=whoisaldo&show_icons=true&include_all_commits=true&count_private=true&hide_border=true&disable_animations=true&bg_color=0A0A0F&title_color=00F0FF&text_color=EAFEFF&icon_color=FF2D78&rank_icon=github" alt="stats" />
+<img height="165" src="https://github-readme-stats.vercel.app/api/top-langs/?username=whoisaldo&layout=compact&langs_count=8&hide_border=true&disable_animations=true&bg_color=0A0A0F&title_color=00F0FF&text_color=EAFEFF" alt="top languages" />
 
-<img src="https://github-readme-streak-stats.herokuapp.com/?user=whoisaldo&hide_border=true&background=0A0A0F&stroke=00F0FF&ring=FF2D78&fire=FFE600&currStreakLabel=00F0FF&sideLabels=EAFEFF&currStreakNum=EAFEFF&sideNums=EAFEFF&dates=5B6470" alt="streak" />
+<img src="https://streak-stats.demolab.com/?user=whoisaldo&hide_border=true&disable_animations=true&background=0A0A0F&stroke=00F0FF&ring=FF2D78&fire=FFE600&currStreakLabel=00F0FF&sideLabels=EAFEFF&currStreakNum=EAFEFF&sideNums=EAFEFF&dates=5B6470" alt="streak" />
 
 </div>
 
