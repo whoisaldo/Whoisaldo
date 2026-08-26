@@ -1,0 +1,14 @@
+<svg width="320" height="165" viewBox="0 0 320 165" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Most Used Languages">
+  <style>
+    .title { font: 700 16px 'JetBrains Mono','Fira Code',ui-monospace,Menlo,Consolas,monospace; fill: #00F0FF; }
+    .lang { font: 400 11px 'JetBrains Mono','Fira Code',ui-monospace,Menlo,Consolas,monospace; fill: #EAFEFF; }
+  </style>
+  <rect width="320" height="165" rx="4.5" fill="#0A0A0F"/>
+  <text class="title" x="25" y="35">Most Used Languages</text>
+  <clipPath id="bar"><rect width="270" height="8" rx="4"/></clipPath>
+  <g transform="translate(25,49)" clip-path="url(#bar)">
+    <rect width="270" height="8" fill="#5B6470" fill-opacity="0.3"/>
+    <rect x="0.00" width="68.98" height="8" fill="#b07219"/><rect x="68.98" width="63.76" height="8" fill="#e34c26"/><rect x="132.74" width="40.38" height="8" fill="#f1e05a"/><rect x="173.12" width="28.49" height="8" fill="#3178c6"/><rect x="201.61" width="19.08" height="8" fill="#F05138"/><rect x="220.70" width="13.52" height="8" fill="#3572A5"/><rect x="234.22" width="10.39" height="8" fill="#f34b7d"/><rect x="244.61" width="9.36" height="8" fill="#dea584"/>
+  </g>
+  <circle cx="30" cy="74" r="5" fill="#b07219"/><text class="lang" x="43" y="78">Java 25.55%</text><circle cx="30" cy="95" r="5" fill="#e34c26"/><text class="lang" x="43" y="99">HTML 23.61%</text><circle cx="30" cy="116" r="5" fill="#f1e05a"/><text class="lang" x="43" y="120">JavaScript 14.96%</text><circle cx="30" cy="137" r="5" fill="#3178c6"/><text class="lang" x="43" y="141">TypeScript 10.55%</text><circle cx="175" cy="74" r="5" fill="#F05138"/><text class="lang" x="188" y="78">Swift 7.07%</text><circle cx="175" cy="95" r="5" fill="#3572A5"/><text class="lang" x="188" y="99">Python 5.01%</text><circle cx="175" cy="116" r="5" fill="#f34b7d"/><text class="lang" x="188" y="120">C++ 3.85%</text><circle cx="175" cy="137" r="5" fill="#dea584"/><text class="lang" x="188" y="141">Rust 3.47%</text>
+</svg>
