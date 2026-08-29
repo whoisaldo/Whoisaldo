@@ -43,6 +43,6 @@ else
   status=1
 fi
 
-fetch 'https://streak-stats.demolab.com/?user=whoisaldo&hide_border=true&background=0A0A0F&stroke=00F0FF&ring=FF2D78&fire=FFE600&currStreakLabel=00F0FF&sideLabels=EAFEFF&currStreakNum=EAFEFF&sideNums=EAFEFF&dates=5B6470' cards/streak.svg || status=1
+fetch 'https://streak-stats.demolab.com/?user=whoisaldo&hide_border=true&background=07070C&stroke=00F0FF&ring=FF2E88&fire=FCEE0A&currStreakLabel=00F0FF&sideLabels=EAFEFF&currStreakNum=EAFEFF&sideNums=EAFEFF&dates=5B6470' cards/streak.svg || status=1
 
 exit $status
