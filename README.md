@@ -39,7 +39,7 @@ interests:  ["Powerlifting", "Wrestling", "Developer tooling", "German car tunin
 
 [![EternalMonitor](https://img.shields.io/github/stars/whoisaldo/EternalMonitor?style=for-the-badge&label=ETERNALMONITOR&labelColor=07070C&color=FCEE0A&logo=github&logoColor=FCEE0A)](https://github.com/whoisaldo/EternalMonitor) [![EternalRichPresence](https://img.shields.io/github/stars/whoisaldo/Eternal-Rich-Presence?style=for-the-badge&label=ETERNALRICHPRESENCE&labelColor=07070C&color=FF2E88&logo=github&logoColor=FF2E88)](https://github.com/whoisaldo/Eternal-Rich-Presence)
 
-<img src="./stars.svg" width="820" alt="Cumulative stargazers over time" />
+<img src="./stars.svg" width="820" alt="Stargazer counts by repository" />
 
 </div>
 
@@ -56,7 +56,7 @@ TOTAL                                                168
 ```
 <!-- STARS:END -->
 
-> Badges are live. The block above and the chart are regenerated daily by
+> Badges are live. The block above and the panel are regenerated daily by
 > [`scripts/update_stars.py`](./scripts/update_stars.py), alongside the stat cards.
 
 <div align="center"><img src="./divider_yellow.svg" width="760" /></div>
