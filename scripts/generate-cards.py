@@ -13,10 +13,10 @@ import sys
 
 USER = "whoisaldo"
 
-BG = "#0A0A0F"
+BG = "#07070C"
 CYAN = "#00F0FF"
-PINK = "#FF2D78"
-YELLOW = "#FFE600"
+PINK = "#FF2E88"
+YELLOW = "#FCEE0A"
 TEXT = "#EAFEFF"
 DIM = "#5B6470"
 MONO = "'JetBrains Mono','Fira Code',ui-monospace,Menlo,Consolas,monospace"

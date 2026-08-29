@@ -3,7 +3,7 @@
     .title { font: 700 16px 'JetBrains Mono','Fira Code',ui-monospace,Menlo,Consolas,monospace; fill: #00F0FF; }
     .lang { font: 400 11px 'JetBrains Mono','Fira Code',ui-monospace,Menlo,Consolas,monospace; fill: #EAFEFF; }
   </style>
-  <rect width="320" height="165" rx="4.5" fill="#0A0A0F"/>
+  <rect width="320" height="165" rx="4.5" fill="#07070C"/>
   <text class="title" x="25" y="35">Most Used Languages</text>
   <clipPath id="bar"><rect width="270" height="8" rx="4"/></clipPath>
   <g transform="translate(25,49)" clip-path="url(#bar)">
