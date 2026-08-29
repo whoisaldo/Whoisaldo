@@ -56,9 +56,6 @@ TOTAL                                                168
 ```
 <!-- STARS:END -->
 
-> Badges are live. The block above and the panel are regenerated daily by
-> [`scripts/update_stars.py`](./scripts/update_stars.py), alongside the stat cards.
-
 <div align="center"><img src="./divider_yellow.svg" width="760" /></div>
 
 ## `> ls ./projects --all`
