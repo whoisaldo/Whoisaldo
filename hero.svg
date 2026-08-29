@@ -1,117 +1,153 @@
-<svg width="900" height="280" viewBox="0 0 900 280" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="ALDO — SDE @ Amazon">
-  <defs>
-    <style><![CDATA[
-      :root{ --cy:#00F0FF; --mg:#FF2D78; --yl:#FFE600; }
-      .hud{ font-family:'JetBrains Mono','Fira Code',ui-monospace,SFMono-Regular,Menlo,Consolas,monospace; }
-      .cyan{ transform:translate(-3px,0); animation:jcy 4s steps(1,end) infinite; }
-      .mag { transform:translate(3px,0);  animation:jmg 4s steps(1,end) infinite; }
-      .main{ animation:flk 4s linear infinite; }
-      .sweep{ animation:swp 7s linear infinite; }
-      .cur { animation:blink 1.06s steps(1,end) infinite; }
-      .dot { animation:blink 1.4s steps(1,end) infinite; }
-      .bar { animation:barpulse 3.2s ease-in-out infinite; }
-      @keyframes jcy{
-        0%,84%,100%{transform:translate(-3px,0)}
-        86%{transform:translate(-9px,1px)} 88%{transform:translate(2px,-1px)}
-        90%{transform:translate(-6px,2px)} 92%{transform:translate(-3px,0)}
-        95%{transform:translate(-10px,-2px)} 97%{transform:translate(-3px,0)}
-      }
-      @keyframes jmg{
-        0%,84%,100%{transform:translate(3px,0)}
-        86%{transform:translate(9px,-1px)} 88%{transform:translate(-2px,1px)}
-        90%{transform:translate(6px,-2px)} 92%{transform:translate(3px,0)}
-        95%{transform:translate(10px,2px)} 97%{transform:translate(3px,0)}
-      }
-      @keyframes flk{
-        0%,100%{opacity:1} 86%{opacity:.5} 87%{opacity:1}
-        91%{opacity:.72} 92%{opacity:1} 96%{opacity:.38} 97%{opacity:1}
-      }
-      @keyframes swp{ 0%{transform:translateY(-70px)} 100%{transform:translateY(290px)} }
-      @keyframes blink{ 0%,52%{opacity:1} 53%,100%{opacity:0} }
-      @keyframes barpulse{ 0%,100%{opacity:.35} 50%{opacity:.9} }
-    ]]></style>
+<svg width="1000" height="360" viewBox="0 0 1000 360" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="ALDO — SDE Intern, AWS CloudFormation. Systems, iOS and web.">
+<defs>
+<style><![CDATA[
+.hud{font-family:'JetBrains Mono','Fira Code',ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
+.cy{transform:translate(-4px,0);animation:jcy 6s steps(1,end) infinite}
+.mg{transform:translate(4px,0);animation:jmg 6s steps(1,end) infinite}
+.core{animation:flk 6s linear infinite}
+.s1{opacity:0;animation:sl1 6s steps(1,end) infinite}
+.s2{opacity:0;animation:sl2 6s steps(1,end) infinite}
+.s3{opacity:0;animation:sl3 6s steps(1,end) infinite}
+.sweep{animation:swp 9s linear infinite}
+.cur{animation:blink 1.06s steps(1,end) infinite}
+.dot{animation:blink 1.4s steps(1,end) infinite}
+.bar{animation:barp 3.4s ease-in-out infinite}
+.tick{animation:tickf 2.6s ease-in-out infinite}
+@keyframes jcy{0%,84%,100%{transform:translate(-4px,0)}85%{transform:translate(-13px,1px)}87%{transform:translate(3px,-1px)}89%{transform:translate(-8px,2px)}91%{transform:translate(-4px,0)}95%{transform:translate(-14px,-2px)}96.5%{transform:translate(-4px,0)}}
+@keyframes jmg{0%,84%,100%{transform:translate(4px,0)}85%{transform:translate(13px,-1px)}87%{transform:translate(-3px,1px)}89%{transform:translate(8px,-2px)}91%{transform:translate(4px,0)}95%{transform:translate(14px,2px)}96.5%{transform:translate(4px,0)}}
+@keyframes flk{0%,100%{opacity:1}85%{opacity:.45}86%{opacity:1}90%{opacity:.7}91%{opacity:1}95.5%{opacity:.3}96.5%{opacity:1}}
+@keyframes sl1{0%,84.5%,100%{opacity:0;transform:translate(0,0)}85%{opacity:1;transform:translate(26px,0)}86.5%{opacity:0;transform:translate(0,0)}95%{opacity:1;transform:translate(-18px,0)}96%{opacity:0;transform:translate(0,0)}}
+@keyframes sl2{0%,86.5%,100%{opacity:0;transform:translate(0,0)}87%{opacity:1;transform:translate(-22px,0)}88.5%{opacity:0;transform:translate(0,0)}95.5%{opacity:1;transform:translate(14px,0)}96.5%{opacity:0;transform:translate(0,0)}}
+@keyframes sl3{0%,89%,100%{opacity:0;transform:translate(0,0)}89.5%{opacity:1;transform:translate(17px,0)}90.5%{opacity:0;transform:translate(0,0)}}
+@keyframes swp{0%{transform:translateY(-90px)}100%{transform:translateY(390px)}}
+@keyframes blink{0%,52%{opacity:1}53%,100%{opacity:0}}
+@keyframes barp{0%,100%{opacity:.4}50%{opacity:1}}
+@keyframes tickf{0%,100%{opacity:.25}50%{opacity:.7}}
+]]></style>
+<radialGradient id="vig" cx="50%" cy="42%" r="75%"><stop offset="48%" stop-color="#07070C" stop-opacity="0"/><stop offset="100%" stop-color="#07070C" stop-opacity="0.94"/></radialGradient>
+<pattern id="grid" width="32" height="32" patternUnits="userSpaceOnUse"><path d="M32 0 H0 V32" fill="none" stroke="#00F0FF" stroke-width="0.5" opacity="0.055"/></pattern>
+<pattern id="scan" width="3" height="3" patternUnits="userSpaceOnUse"><rect width="3" height="1" fill="#000000" opacity="0.24"/></pattern>
+<pattern id="hz" width="26" height="16" patternUnits="userSpaceOnUse" patternTransform="skewX(-32)"><rect width="13" height="16" fill="#FCEE0A"/><rect x="13" width="13" height="16" fill="#07070C"/></pattern>
+<linearGradient id="sweepg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#00F0FF" stop-opacity="0"/><stop offset="0.5" stop-color="#00F0FF" stop-opacity="0.13"/><stop offset="1" stop-color="#00F0FF" stop-opacity="0"/></linearGradient>
+<linearGradient id="barg" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#FF2E88" stop-opacity="0"/><stop offset="0.42" stop-color="#FF2E88" stop-opacity="1"/><stop offset="0.62" stop-color="#FCEE0A" stop-opacity="1"/><stop offset="1" stop-color="#FCEE0A" stop-opacity="0"/></linearGradient>
+<linearGradient id="eqg" gradientUnits="userSpaceOnUse" x1="240" y1="0" x2="764" y2="0"><stop offset="0" stop-color="#FF2E88"/><stop offset="0.5" stop-color="#FCEE0A"/><stop offset="1" stop-color="#00F0FF"/></linearGradient>
+<linearGradient id="floorg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FF2E88" stop-opacity="0"/><stop offset="1" stop-color="#FF2E88" stop-opacity="0.85"/></linearGradient>
+<filter id="glow" x="-60%" y="-60%" width="220%" height="220%"><feGaussianBlur stdDeviation="4" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+<filter id="soft" x="-60%" y="-60%" width="220%" height="220%"><feGaussianBlur stdDeviation="1.5"/></filter>
+<filter id="halo" x="-80%" y="-80%" width="260%" height="260%"><feGaussianBlur stdDeviation="15"/></filter>
+<g id="word" fill="none" stroke="currentColor" stroke-width="18" stroke-linecap="square" stroke-linejoin="miter">
+<g transform="translate(225,62)"><path d="M8,140 L50,8 L92,140" /><path d="M28,94 L72,94"/></g>
+<g transform="translate(375,62)"><path d="M18,8 L18,140 L92,140"/></g>
+<g transform="translate(525,62)"><path d="M18,140 L18,8 L62,8 L92,38 L92,110 L62,140 Z"/></g>
+<g transform="translate(675,62)"><path d="M30,8 L70,8 L92,38 L92,110 L70,140 L30,140 L8,110 L8,38 Z"/></g>
+</g>
+<clipPath id="b1"><rect x="0" y="88" width="1000" height="20"/></clipPath>
+<clipPath id="b2"><rect x="0" y="132" width="1000" height="17"/></clipPath>
+<clipPath id="b3"><rect x="0" y="172" width="1000" height="21"/></clipPath>
+<clipPath id="tapeT"><rect x="0" y="0" width="1000" height="14"/></clipPath>
+<clipPath id="tapeB"><rect x="0" y="346" width="1000" height="14"/></clipPath>
+<clipPath id="floor"><rect x="0" y="248" width="1000" height="112"/></clipPath>
+</defs>
 
-    <radialGradient id="vig" cx="50%" cy="44%" r="72%">
-      <stop offset="52%" stop-color="#0A0A0F" stop-opacity="0"/>
-      <stop offset="100%" stop-color="#0A0A0F" stop-opacity="0.92"/>
-    </radialGradient>
-    <pattern id="grid" width="34" height="34" patternUnits="userSpaceOnUse">
-      <path d="M34 0 H0 V34" fill="none" stroke="#00F0FF" stroke-width="0.5" opacity="0.06"/>
-    </pattern>
-    <pattern id="scan" width="3" height="3" patternUnits="userSpaceOnUse">
-      <rect width="3" height="1" fill="#000000" opacity="0.22"/>
-    </pattern>
-    <linearGradient id="sweepg" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0" stop-color="#00F0FF" stop-opacity="0"/>
-      <stop offset="0.5" stop-color="#00F0FF" stop-opacity="0.14"/>
-      <stop offset="1" stop-color="#00F0FF" stop-opacity="0"/>
-    </linearGradient>
-    <linearGradient id="barg" x1="0" y1="0" x2="1" y2="0">
-      <stop offset="0" stop-color="#FF2D78" stop-opacity="0"/>
-      <stop offset="0.5" stop-color="#FF2D78" stop-opacity="1"/>
-      <stop offset="1" stop-color="#FFE600" stop-opacity="0"/>
-    </linearGradient>
+<rect width="1000" height="360" fill="#07070C"/>
+<rect width="1000" height="360" fill="url(#grid)"/>
+<g clip-path="url(#floor)" opacity="0.75">
+<line x1="500" y1="218" x2="-1150" y2="360" stroke="url(#floorg)" stroke-width="1"/>
+<line x1="500" y1="218" x2="-1000" y2="360" stroke="url(#floorg)" stroke-width="1"/>
+<line x1="500" y1="218" x2="-850" y2="360" stroke="url(#floorg)" stroke-width="1"/>
+<line x1="500" y1="218" x2="-700" y2="360" stroke="url(#floorg)" stroke-width="1"/>
+<line x1="500" y1="218" x2="-550" y2="360" stroke="url(#floorg)" stroke-width="1"/>
+<line x1="500" y1="218" x2="-400" y2="360" stroke="url(#floorg)" stroke-width="1"/>
+<line x1="500" y1="218" x2="-250" y2="360" stroke="url(#floorg)" stroke-width="1"/>
+<line x1="500" y1="218" x2="-100" y2="360" stroke="url(#floorg)" stroke-width="1"/>
+<line x1="500" y1="218" x2="50" y2="360" stroke="url(#floorg)" stroke-width="1"/>
+<line x1="500" y1="218" x2="200" y2="360" stroke="url(#floorg)" stroke-width="1"/>
+<line x1="500" y1="218" x2="350" y2="360" stroke="url(#floorg)" stroke-width="1"/>
+<line x1="500" y1="218" x2="500" y2="360" stroke="url(#floorg)" stroke-width="1"/>
+<line x1="500" y1="218" x2="650" y2="360" stroke="url(#floorg)" stroke-width="1"/>
+<line x1="500" y1="218" x2="800" y2="360" stroke="url(#floorg)" stroke-width="1"/>
+<line x1="500" y1="218" x2="950" y2="360" stroke="url(#floorg)" stroke-width="1"/>
+<line x1="500" y1="218" x2="1100" y2="360" stroke="url(#floorg)" stroke-width="1"/>
+<line x1="500" y1="218" x2="1250" y2="360" stroke="url(#floorg)" stroke-width="1"/>
+<line x1="500" y1="218" x2="1400" y2="360" stroke="url(#floorg)" stroke-width="1"/>
+<line x1="500" y1="218" x2="1550" y2="360" stroke="url(#floorg)" stroke-width="1"/>
+<line x1="500" y1="218" x2="1700" y2="360" stroke="url(#floorg)" stroke-width="1"/>
+<line x1="500" y1="218" x2="1850" y2="360" stroke="url(#floorg)" stroke-width="1"/>
+<line x1="500" y1="218" x2="2000" y2="360" stroke="url(#floorg)" stroke-width="1"/>
+<line x1="500" y1="218" x2="2150" y2="360" stroke="url(#floorg)" stroke-width="1"/>
+<line x1="0" y1="250.0" x2="1000" y2="250.0" stroke="#FF2E88" stroke-width="1" opacity="0.21"/>
+<line x1="0" y1="262.0" x2="1000" y2="262.0" stroke="#FF2E88" stroke-width="1" opacity="0.27"/>
+<line x1="0" y1="279.4" x2="1000" y2="279.4" stroke="#FF2E88" stroke-width="1" opacity="0.34"/>
+<line x1="0" y1="304.6" x2="1000" y2="304.6" stroke="#FF2E88" stroke-width="1" opacity="0.47"/>
+<line x1="0" y1="341.2" x2="1000" y2="341.2" stroke="#FF2E88" stroke-width="1" opacity="0.60"/>
+</g>
+<rect width="1000" height="360" fill="url(#vig)"/>
+<rect class="sweep" x="0" y="0" width="1000" height="90" fill="url(#sweepg)"/>
 
-    <filter id="glow" x="-60%" y="-60%" width="220%" height="220%">
-      <feGaussianBlur stdDeviation="4" result="b"/>
-      <feMerge><feMergeNode in="b"/><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
-    </filter>
-    <filter id="soft" x="-60%" y="-60%" width="220%" height="220%">
-      <feGaussianBlur stdDeviation="1.4"/>
-    </filter>
-    <filter id="halo" x="-80%" y="-80%" width="260%" height="260%">
-      <feGaussianBlur stdDeviation="13"/>
-    </filter>
+<use href="#word" color="#00F0FF" filter="url(#halo)" opacity="0.33"/>
+<use href="#word" class="cy" color="#00F0FF" filter="url(#soft)" opacity="0.9" style="mix-blend-mode:screen"/>
+<use href="#word" class="mg" color="#FF2E88" filter="url(#soft)" opacity="0.9" style="mix-blend-mode:screen"/>
+<use href="#word" class="core" color="#EAFEFF" filter="url(#glow)"/>
+<g clip-path="url(#b1)" class="s1"><use href="#word" color="#FCEE0A"/></g>
+<g clip-path="url(#b2)" class="s2"><use href="#word" color="#00F0FF"/></g>
+<g clip-path="url(#b3)" class="s3"><use href="#word" color="#FF2E88"/></g>
 
-    <!-- ALDO wordmark: angular geometric letterforms, recolored per copy via currentColor -->
-    <g id="word" fill="none" stroke="currentColor" stroke-width="16" stroke-linecap="square" stroke-linejoin="miter">
-      <g transform="translate(175,58)"><path d="M8,140 L50,8 L92,140"/><path d="M28,94 L72,94"/></g>
-      <g transform="translate(325,58)"><path d="M18,8 L18,140 L92,140"/></g>
-      <g transform="translate(475,58)"><path d="M18,140 L18,8 L62,8 L92,38 L92,110 L62,140 Z"/></g>
-      <g transform="translate(625,58)"><path d="M30,8 L70,8 L92,38 L92,110 L70,140 L30,140 L8,110 L8,38 Z"/></g>
-    </g>
-  </defs>
+<rect x="228" y="233" width="544" height="2" rx="1" fill="#FF2E88" opacity="0.22"/>
+<rect class="bar" x="228" y="232" width="544" height="3" rx="1.5" fill="url(#barg)"/>
+<text class="hud" x="500" y="268" text-anchor="middle" font-size="14.5" letter-spacing="3.4" fill="#FCEE0A">&gt; SDE @ AWS CLOUDFORMATION<tspan fill="#5B6470">  ::  </tspan><tspan fill="#EAFEFF">SYSTEMS</tspan><tspan fill="#5B6470"> // </tspan><tspan fill="#EAFEFF">iOS</tspan><tspan fill="#5B6470"> // </tspan><tspan fill="#EAFEFF">WEB</tspan><tspan class="cur" fill="#00F0FF"> _</tspan></text>
 
-  <!-- backdrop -->
-  <rect width="900" height="280" fill="#0A0A0F"/>
-  <rect width="900" height="280" fill="url(#grid)"/>
-  <rect width="900" height="280" fill="url(#vig)"/>
+<g class="eq">
+<rect x="240" y="327" width="4" height="7" fill="url(#eqg)" opacity="0.75"><animate attributeName="height" values="7;4;13;7" dur="1.40s" begin="0.00s" repeatCount="indefinite"/><animate attributeName="y" values="327;330;321;327" dur="1.40s" begin="0.00s" repeatCount="indefinite"/></rect>
+<rect x="260" y="321" width="4" height="13" fill="url(#eqg)" opacity="0.75"><animate attributeName="height" values="13;6;19;13" dur="1.62s" begin="0.13s" repeatCount="indefinite"/><animate attributeName="y" values="321;328;315;321" dur="1.62s" begin="0.13s" repeatCount="indefinite"/></rect>
+<rect x="280" y="312" width="4" height="22" fill="url(#eqg)" opacity="0.75"><animate attributeName="height" values="22;8;28;22" dur="1.84s" begin="0.26s" repeatCount="indefinite"/><animate attributeName="y" values="312;326;306;312" dur="1.84s" begin="0.26s" repeatCount="indefinite"/></rect>
+<rect x="300" y="325" width="4" height="9" fill="url(#eqg)" opacity="0.75"><animate attributeName="height" values="9;4;15;9" dur="2.06s" begin="0.39s" repeatCount="indefinite"/><animate attributeName="y" values="325;330;319;325" dur="2.06s" begin="0.39s" repeatCount="indefinite"/></rect>
+<rect x="320" y="318" width="4" height="16" fill="url(#eqg)" opacity="0.75"><animate attributeName="height" values="16;6;22;16" dur="2.28s" begin="0.52s" repeatCount="indefinite"/><animate attributeName="y" values="318;328;312;318" dur="2.28s" begin="0.52s" repeatCount="indefinite"/></rect>
+<rect x="340" y="309" width="4" height="25" fill="url(#eqg)" opacity="0.75"><animate attributeName="height" values="25;8;31;25" dur="1.40s" begin="0.65s" repeatCount="indefinite"/><animate attributeName="y" values="309;326;303;309" dur="1.40s" begin="0.65s" repeatCount="indefinite"/></rect>
+<rect x="360" y="323" width="4" height="11" fill="url(#eqg)" opacity="0.75"><animate attributeName="height" values="11;4;17;11" dur="1.62s" begin="0.78s" repeatCount="indefinite"/><animate attributeName="y" values="323;330;317;323" dur="1.62s" begin="0.78s" repeatCount="indefinite"/></rect>
+<rect x="380" y="315" width="4" height="19" fill="url(#eqg)" opacity="0.75"><animate attributeName="height" values="19;6;25;19" dur="1.84s" begin="0.00s" repeatCount="indefinite"/><animate attributeName="y" values="315;328;309;315" dur="1.84s" begin="0.00s" repeatCount="indefinite"/></rect>
+<rect x="400" y="326" width="4" height="8" fill="url(#eqg)" opacity="0.75"><animate attributeName="height" values="8;8;14;8" dur="2.06s" begin="0.13s" repeatCount="indefinite"/><animate attributeName="y" values="326;326;320;326" dur="2.06s" begin="0.13s" repeatCount="indefinite"/></rect>
+<rect x="420" y="311" width="4" height="23" fill="url(#eqg)" opacity="0.75"><animate attributeName="height" values="23;4;29;23" dur="2.28s" begin="0.26s" repeatCount="indefinite"/><animate attributeName="y" values="311;330;305;311" dur="2.28s" begin="0.26s" repeatCount="indefinite"/></rect>
+<rect x="440" y="320" width="4" height="14" fill="url(#eqg)" opacity="0.75"><animate attributeName="height" values="14;6;20;14" dur="1.40s" begin="0.39s" repeatCount="indefinite"/><animate attributeName="y" values="320;328;314;320" dur="1.40s" begin="0.39s" repeatCount="indefinite"/></rect>
+<rect x="460" y="314" width="4" height="20" fill="url(#eqg)" opacity="0.75"><animate attributeName="height" values="20;8;26;20" dur="1.62s" begin="0.52s" repeatCount="indefinite"/><animate attributeName="y" values="314;326;308;314" dur="1.62s" begin="0.52s" repeatCount="indefinite"/></rect>
+<rect x="480" y="324" width="4" height="10" fill="url(#eqg)" opacity="0.75"><animate attributeName="height" values="10;4;16;10" dur="1.84s" begin="0.65s" repeatCount="indefinite"/><animate attributeName="y" values="324;330;318;324" dur="1.84s" begin="0.65s" repeatCount="indefinite"/></rect>
+<rect x="500" y="308" width="4" height="26" fill="url(#eqg)" opacity="0.75"><animate attributeName="height" values="26;6;32;26" dur="2.06s" begin="0.78s" repeatCount="indefinite"/><animate attributeName="y" values="308;328;302;308" dur="2.06s" begin="0.78s" repeatCount="indefinite"/></rect>
+<rect x="520" y="319" width="4" height="15" fill="url(#eqg)" opacity="0.75"><animate attributeName="height" values="15;8;21;15" dur="2.28s" begin="0.00s" repeatCount="indefinite"/><animate attributeName="y" values="319;326;313;319" dur="2.28s" begin="0.00s" repeatCount="indefinite"/></rect>
+<rect x="540" y="325" width="4" height="9" fill="url(#eqg)" opacity="0.75"><animate attributeName="height" values="9;4;15;9" dur="1.40s" begin="0.13s" repeatCount="indefinite"/><animate attributeName="y" values="325;330;319;325" dur="1.40s" begin="0.13s" repeatCount="indefinite"/></rect>
+<rect x="560" y="313" width="4" height="21" fill="url(#eqg)" opacity="0.75"><animate attributeName="height" values="21;6;27;21" dur="1.62s" begin="0.26s" repeatCount="indefinite"/><animate attributeName="y" values="313;328;307;313" dur="1.62s" begin="0.26s" repeatCount="indefinite"/></rect>
+<rect x="580" y="322" width="4" height="12" fill="url(#eqg)" opacity="0.75"><animate attributeName="height" values="12;8;18;12" dur="1.84s" begin="0.39s" repeatCount="indefinite"/><animate attributeName="y" values="322;326;316;322" dur="1.84s" begin="0.39s" repeatCount="indefinite"/></rect>
+<rect x="600" y="310" width="4" height="24" fill="url(#eqg)" opacity="0.75"><animate attributeName="height" values="24;4;30;24" dur="2.06s" begin="0.52s" repeatCount="indefinite"/><animate attributeName="y" values="310;330;304;310" dur="2.06s" begin="0.52s" repeatCount="indefinite"/></rect>
+<rect x="620" y="326" width="4" height="8" fill="url(#eqg)" opacity="0.75"><animate attributeName="height" values="8;6;14;8" dur="2.28s" begin="0.65s" repeatCount="indefinite"/><animate attributeName="y" values="326;328;320;326" dur="2.28s" begin="0.65s" repeatCount="indefinite"/></rect>
+<rect x="640" y="316" width="4" height="18" fill="url(#eqg)" opacity="0.75"><animate attributeName="height" values="18;8;24;18" dur="1.40s" begin="0.78s" repeatCount="indefinite"/><animate attributeName="y" values="316;326;310;316" dur="1.40s" begin="0.78s" repeatCount="indefinite"/></rect>
+<rect x="660" y="323" width="4" height="11" fill="url(#eqg)" opacity="0.75"><animate attributeName="height" values="11;4;17;11" dur="1.62s" begin="0.00s" repeatCount="indefinite"/><animate attributeName="y" values="323;330;317;323" dur="1.62s" begin="0.00s" repeatCount="indefinite"/></rect>
+<rect x="680" y="312" width="4" height="22" fill="url(#eqg)" opacity="0.75"><animate attributeName="height" values="22;6;28;22" dur="1.84s" begin="0.13s" repeatCount="indefinite"/><animate attributeName="y" values="312;328;306;312" dur="1.84s" begin="0.13s" repeatCount="indefinite"/></rect>
+<rect x="700" y="320" width="4" height="14" fill="url(#eqg)" opacity="0.75"><animate attributeName="height" values="14;8;20;14" dur="2.06s" begin="0.26s" repeatCount="indefinite"/><animate attributeName="y" values="320;326;314;320" dur="2.06s" begin="0.26s" repeatCount="indefinite"/></rect>
+<rect x="720" y="325" width="4" height="9" fill="url(#eqg)" opacity="0.75"><animate attributeName="height" values="9;4;15;9" dur="2.28s" begin="0.39s" repeatCount="indefinite"/><animate attributeName="y" values="325;330;319;325" dur="2.28s" begin="0.39s" repeatCount="indefinite"/></rect>
+<rect x="740" y="317" width="4" height="17" fill="url(#eqg)" opacity="0.75"><animate attributeName="height" values="17;6;23;17" dur="1.40s" begin="0.52s" repeatCount="indefinite"/><animate attributeName="y" values="317;328;311;317" dur="1.40s" begin="0.52s" repeatCount="indefinite"/></rect>
+<rect x="236" y="335" width="528" height="1" fill="#5B6470" opacity="0.35"/>
+</g>
 
-  <!-- animated scan sweep -->
-  <rect class="sweep" x="0" y="0" width="900" height="70" fill="url(#sweepg)"/>
+<g fill="none" stroke="#00F0FF" stroke-width="1.5" opacity="0.8">
+<path d="M16,46 L16,20 L42,20"/><path d="M958,20 L984,20 L984,46"/>
+<path d="M16,308 L16,334 L42,334"/><path d="M958,334 L984,334 L984,308"/></g>
+<g class="tick" stroke="#FCEE0A" stroke-width="1.5" opacity="0.3">
+<line x1="16" y1="84" x2="26" y2="84"/><line x1="984" y1="84" x2="974" y2="84"/>
+<line x1="16" y1="105" x2="21" y2="105"/><line x1="984" y1="105" x2="979" y2="105"/>
+<line x1="16" y1="126" x2="26" y2="126"/><line x1="984" y1="126" x2="974" y2="126"/>
+<line x1="16" y1="147" x2="21" y2="147"/><line x1="984" y1="147" x2="979" y2="147"/>
+<line x1="16" y1="168" x2="26" y2="168"/><line x1="984" y1="168" x2="974" y2="168"/>
+<line x1="16" y1="189" x2="21" y2="189"/><line x1="984" y1="189" x2="979" y2="189"/>
+<line x1="16" y1="210" x2="26" y2="210"/><line x1="984" y1="210" x2="974" y2="210"/>
+<line x1="16" y1="231" x2="21" y2="231"/><line x1="984" y1="231" x2="979" y2="231"/>
+<line x1="16" y1="252" x2="26" y2="252"/><line x1="984" y1="252" x2="974" y2="252"/>
+</g>
+<g class="hud" font-size="10.5" letter-spacing="1.6">
+<text x="52" y="34" fill="#00F0FF" opacity="0.72">WHOISALDO.EXE</text>
+<text x="948" y="34" text-anchor="end" fill="#00F0FF" opacity="0.72">SYS://ONLINE</text>
+<circle class="dot" cx="958" cy="30.5" r="3" fill="#39FF7A"/>
+<text x="52" y="330" fill="#FF2E88" opacity="0.75">LOC: SEATTLE.WA</text>
+<text x="948" y="330" text-anchor="end" fill="#FCEE0A" opacity="0.72">BUILD//2027</text></g>
 
-  <!-- wordmark stack: halo -> cyan split -> magenta split -> bright core -->
-  <use href="#word" color="#00F0FF" filter="url(#halo)" opacity="0.35"/>
-  <use href="#word" class="cyan" color="#00F0FF" filter="url(#soft)" opacity="0.9" style="mix-blend-mode:screen"/>
-  <use href="#word" class="mag"  color="#FF2D78" filter="url(#soft)" opacity="0.9" style="mix-blend-mode:screen"/>
-  <use href="#word" class="main" color="#EAFEFF" filter="url(#glow)"/>
-
-  <!-- neon underline / data bar -->
-  <rect x="183" y="214" width="534" height="2" rx="1" fill="#FF2D78" opacity="0.25"/>
-  <rect class="bar" x="183" y="213" width="534" height="3" rx="1.5" fill="url(#barg)"/>
-
-  <!-- subtitle -->
-  <text class="hud" x="450" y="244" text-anchor="middle" font-size="15" letter-spacing="4" fill="#FFE600">
-    &gt; SDE @ AMAZON<tspan fill="#5b6470">  ::  </tspan><tspan fill="#EAFEFF">SYSTEMS</tspan><tspan fill="#5b6470"> // </tspan><tspan fill="#EAFEFF">FULL-STACK</tspan><tspan class="cur" fill="#00F0FF"> _</tspan>
-  </text>
-
-  <!-- HUD corner brackets -->
-  <g fill="none" stroke="#00F0FF" stroke-width="1.5" opacity="0.8">
-    <path d="M14,40 L14,14 L40,14"/>
-    <path d="M860,14 L886,14 L886,40"/>
-    <path d="M14,240 L14,266 L40,266"/>
-    <path d="M860,266 L886,266 L886,240"/>
-  </g>
-
-  <!-- HUD micro labels -->
-  <g class="hud" font-size="10.5" letter-spacing="1.5">
-    <text x="46" y="22" fill="#00F0FF" opacity="0.7">WHOISALDO.EXE</text>
-    <text x="854" y="22" text-anchor="end" fill="#00F0FF" opacity="0.7">SYS://ONLINE</text>
-    <circle class="dot" cx="864" cy="18.5" r="3" fill="#39FF7A"/>
-    <text x="46" y="262" fill="#FF2D78" opacity="0.75">LOC: SEATTLE.WA</text>
-    <text x="854" y="262" text-anchor="end" fill="#FFE600" opacity="0.7">BUILD//2027</text>
-  </g>
-
-  <!-- CRT scanline overlay -->
-  <rect width="900" height="280" fill="url(#scan)" pointer-events="none"/>
+<g clip-path="url(#tapeT)" opacity="0.85"><rect x="-30" y="0" width="1060" height="14" fill="url(#hz)"><animateTransform attributeName="transform" type="translate" from="0 0" to="26 0" dur="1.4s" repeatCount="indefinite"/></rect></g>
+<g clip-path="url(#tapeB)" opacity="0.85"><rect x="-30" y="346" width="1060" height="14" fill="url(#hz)"><animateTransform attributeName="transform" type="translate" from="0 0" to="26 0" dur="1.4s" repeatCount="indefinite"/></rect></g>
+<rect width="1000" height="360" fill="url(#scan)" pointer-events="none"/>
 </svg>

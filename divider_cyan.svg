@@ -1,21 +1,41 @@
-<svg width="700" height="14" viewBox="0 0 700 14" xmlns="http://www.w3.org/2000/svg">
-  <defs>
-    <filter id="gc" x="-10%" y="-100%" width="120%" height="300%"><feGaussianBlur stdDeviation="1.4"/></filter>
-    <linearGradient id="pc" x1="0" y1="0" x2="1" y2="0">
-      <stop offset="0" stop-color="#00F0FF" stop-opacity="0"/>
-      <stop offset="0.5" stop-color="#00F0FF" stop-opacity="1"/>
-      <stop offset="1" stop-color="#00F0FF" stop-opacity="0"/>
-    </linearGradient>
-  </defs>
-  <g fill="#00F0FF" filter="url(#gc)">
-    <rect x="0"   y="6" width="40"  height="2" rx="1" opacity="0.25"/>
-    <rect x="50"  y="6" width="150" height="2" rx="1" opacity="0.55"/>
-    <rect x="210" y="6" width="30"  height="2" rx="1" opacity="0.3"/>
-    <rect x="250" y="6" width="260" height="2" rx="1" opacity="0.55"/>
-    <rect x="520" y="6" width="20"  height="2" rx="1" opacity="0.25"/>
-    <rect x="550" y="6" width="150" height="2" rx="1" opacity="0.55"/>
-  </g>
-  <rect x="0" y="5" width="120" height="4" rx="2" fill="url(#pc)" filter="url(#gc)">
-    <animateTransform attributeName="transform" type="translate" from="-130 0" to="700 0" dur="3s" repeatCount="indefinite"/>
-  </rect>
+<svg width="760" height="18" viewBox="0 0 760 18" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="section divider">
+<defs>
+<filter id="g00F0FF" x="-10%" y="-200%" width="120%" height="500%"><feGaussianBlur stdDeviation="1.5"/></filter>
+<linearGradient id="p00F0FF" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#00F0FF" stop-opacity="0"/><stop offset="0.45" stop-color="#00F0FF" stop-opacity="1"/><stop offset="0.55" stop-color="#EAFEFF" stop-opacity="1"/><stop offset="1" stop-color="#00F0FF" stop-opacity="0"/></linearGradient>
+</defs>
+<g fill="#00F0FF" filter="url(#g00F0FF)">
+<rect x="0" y="8" width="34" height="2" rx="1" opacity="0.3"/>
+<rect x="42" y="8" width="118" height="2" rx="1" opacity="0.55"/>
+<rect x="168" y="8" width="26" height="2" rx="1" opacity="0.3"/>
+<rect x="202" y="8" width="214" height="2" rx="1" opacity="0.55"/>
+<rect x="424" y="8" width="18" height="2" rx="1" opacity="0.22"/>
+<rect x="450" y="8" width="96" height="2" rx="1" opacity="0.55"/>
+<rect x="554" y="8" width="40" height="2" rx="1" opacity="0.3"/>
+<rect x="602" y="8" width="158" height="2" rx="1" opacity="0.55"/>
+</g>
+<g stroke="#FF2E88" stroke-width="1" opacity="0.34">
+<line x1="0" y1="6.5" x2="0" y2="11.5"/>
+<line x1="38" y1="7.75" x2="38" y2="10.25"/>
+<line x1="76" y1="7.75" x2="76" y2="10.25"/>
+<line x1="114" y1="6.5" x2="114" y2="11.5"/>
+<line x1="152" y1="7.75" x2="152" y2="10.25"/>
+<line x1="190" y1="7.75" x2="190" y2="10.25"/>
+<line x1="228" y1="6.5" x2="228" y2="11.5"/>
+<line x1="266" y1="7.75" x2="266" y2="10.25"/>
+<line x1="304" y1="7.75" x2="304" y2="10.25"/>
+<line x1="342" y1="6.5" x2="342" y2="11.5"/>
+<line x1="380" y1="7.75" x2="380" y2="10.25"/>
+<line x1="418" y1="7.75" x2="418" y2="10.25"/>
+<line x1="456" y1="6.5" x2="456" y2="11.5"/>
+<line x1="494" y1="7.75" x2="494" y2="10.25"/>
+<line x1="532" y1="7.75" x2="532" y2="10.25"/>
+<line x1="570" y1="6.5" x2="570" y2="11.5"/>
+<line x1="608" y1="7.75" x2="608" y2="10.25"/>
+<line x1="646" y1="7.75" x2="646" y2="10.25"/>
+<line x1="684" y1="6.5" x2="684" y2="11.5"/>
+<line x1="722" y1="7.75" x2="722" y2="10.25"/>
+<line x1="760" y1="7.75" x2="760" y2="10.25"/>
+</g>
+<rect x="0" y="6.5" width="132" height="5" rx="2.5" fill="url(#p00F0FF)" filter="url(#g00F0FF)"><animateTransform attributeName="transform" type="translate" from="-140 0" to="760 0" dur="3.4s" repeatCount="indefinite"/></rect>
+<rect x="0" y="7.5" width="46" height="3" rx="1.5" fill="#FF2E88" opacity="0.5" filter="url(#g00F0FF)"><animateTransform attributeName="transform" type="translate" from="-60 0" to="760 0" dur="2.1s" begin="1.1s" repeatCount="indefinite"/></rect>
 </svg>
