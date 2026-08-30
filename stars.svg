@@ -9,16 +9,16 @@
 <rect width="820" height="248" fill="url(#g)"/>
 <text class="t" x="40" y="34" font-size="11" fill="#FCEE0A" letter-spacing="2.4">&gt; STARGAZERS // LIVE</text>
 <circle class="live" cx="232" cy="30" r="3.5" fill="#39FF7A"/>
-<text class="t" x="780" y="34" text-anchor="end" font-size="9" fill="#5B6470" letter-spacing="1.2">SYNCED 2026-08-29</text>
+<text class="t" x="780" y="34" text-anchor="end" font-size="9" fill="#5B6470" letter-spacing="1.2">SYNCED 2026-08-30</text>
 <line x1="40" y1="48" x2="780" y2="48" stroke="#5B6470" stroke-width="1" opacity="0.3"/>
 <text class="t" x="40" y="82" font-size="9.5" fill="#5B6470" letter-spacing="2">TOTAL</text>
-<text class="t" x="40" y="152" font-size="64" fill="#FCEE0A" filter="url(#glow)">168</text>
+<text class="t" x="40" y="152" font-size="64" fill="#FCEE0A" filter="url(#glow)">151</text>
 <text class="t" x="40" y="176" font-size="9.5" fill="#EAFEFF" letter-spacing="2">STARGAZERS</text>
 <text class="t" x="40" y="194" font-size="9" fill="#5B6470" letter-spacing="1.2">ACROSS 4 TRACKED REPOS</text>
 <line x1="252" y1="62" x2="252" y2="218" stroke="#5B6470" stroke-width="1" opacity="0.3"/>
 <text class="t" x="280" y="84" font-size="11.5" fill="#EAFEFF">EternalMonitor</text>
 <text class="t" x="388.9" y="84" font-size="8.5" fill="#5B6470" letter-spacing="1">RUST</text>
-<text class="t" x="780" y="84" text-anchor="end" font-size="15" fill="#FCEE0A">136</text>
+<text class="t" x="780" y="84" text-anchor="end" font-size="15" fill="#FCEE0A">120</text>
 <rect x="280.0" y="92" width="9.9" height="8" fill="#FCEE0A"><animate attributeName="opacity" values="1;0.72;1" dur="2.4s" begin="0.00s" repeatCount="indefinite"/></rect>
 <rect x="291.9" y="92" width="9.9" height="8" fill="#FCEE0A"><animate attributeName="opacity" values="1;0.72;1" dur="2.4s" begin="0.04s" repeatCount="indefinite"/></rect>
 <rect x="303.8" y="92" width="9.9" height="8" fill="#FCEE0A"><animate attributeName="opacity" values="1;0.72;1" dur="2.4s" begin="0.09s" repeatCount="indefinite"/></rect>
@@ -63,7 +63,7 @@
 <rect x="768.1" y="92" width="9.9" height="8" fill="#FCEE0A"><animate attributeName="opacity" values="1;0.72;1" dur="2.4s" begin="1.84s" repeatCount="indefinite"/></rect>
 <text class="t" x="280" y="124" font-size="11.5" fill="#EAFEFF">Eternal-Rich-Presence</text>
 <text class="t" x="437.3" y="124" font-size="8.5" fill="#5B6470" letter-spacing="1">PYTHON</text>
-<text class="t" x="780" y="124" text-anchor="end" font-size="15" fill="#FF2E88">30</text>
+<text class="t" x="780" y="124" text-anchor="end" font-size="15" fill="#FF2E88">29</text>
 <rect x="280.0" y="132" width="9.9" height="8" fill="#FF2E88"><animate attributeName="opacity" values="1;0.72;1" dur="2.4s" begin="0.00s" repeatCount="indefinite"/></rect>
 <rect x="291.9" y="132" width="9.9" height="8" fill="#FF2E88"><animate attributeName="opacity" values="1;0.72;1" dur="2.4s" begin="0.04s" repeatCount="indefinite"/></rect>
 <rect x="303.8" y="132" width="9.9" height="8" fill="#FF2E88"><animate attributeName="opacity" values="1;0.72;1" dur="2.4s" begin="0.09s" repeatCount="indefinite"/></rect>
@@ -73,7 +73,7 @@
 <rect x="351.4" y="132" width="9.9" height="8" fill="#FF2E88"><animate attributeName="opacity" values="1;0.72;1" dur="2.4s" begin="0.27s" repeatCount="indefinite"/></rect>
 <rect x="363.3" y="132" width="9.9" height="8" fill="#FF2E88"><animate attributeName="opacity" values="1;0.72;1" dur="2.4s" begin="0.32s" repeatCount="indefinite"/></rect>
 <rect x="375.2" y="132" width="9.9" height="8" fill="#FF2E88"><animate attributeName="opacity" values="1;0.72;1" dur="2.4s" begin="0.36s" repeatCount="indefinite"/></rect>
-<rect x="387.1" y="132" width="9.9" height="8" fill="#5B6470" opacity="0.16"/>
+<rect x="387.1" y="132" width="9.9" height="8" fill="#FF2E88"><animate attributeName="opacity" values="1;0.72;1" dur="2.4s" begin="0.40s" repeatCount="indefinite"/></rect>
 <rect x="399.0" y="132" width="9.9" height="8" fill="#5B6470" opacity="0.16"/>
 <rect x="411.0" y="132" width="9.9" height="8" fill="#5B6470" opacity="0.16"/>
 <rect x="422.9" y="132" width="9.9" height="8" fill="#5B6470" opacity="0.16"/>
