@@ -9,7 +9,7 @@
 <rect width="820" height="248" fill="url(#g)"/>
 <text class="t" x="40" y="34" font-size="11" fill="#FCEE0A" letter-spacing="2.4">&gt; STARGAZERS // LIVE</text>
 <circle class="live" cx="232" cy="30" r="3.5" fill="#39FF7A"/>
-<text class="t" x="780" y="34" text-anchor="end" font-size="9" fill="#5B6470" letter-spacing="1.2">SYNCED 2026-09-04</text>
+<text class="t" x="780" y="34" text-anchor="end" font-size="9" fill="#5B6470" letter-spacing="1.2">SYNCED 2026-09-05</text>
 <line x1="40" y1="48" x2="780" y2="48" stroke="#5B6470" stroke-width="1" opacity="0.3"/>
 <text class="t" x="40" y="82" font-size="9.5" fill="#5B6470" letter-spacing="2">TOTAL</text>
 <text class="t" x="40" y="152" font-size="64" fill="#FCEE0A" filter="url(#glow)">151</text>
