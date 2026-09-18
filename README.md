@@ -45,14 +45,14 @@ interests:  ["Powerlifting", "Wrestling", "Developer tooling", "German car tunin
 
 <!-- STARS:START -->
 ```
-SIGNAL // stargazers across whoisaldo   ·   synced 2026-09-17
+SIGNAL // stargazers across whoisaldo   ·   synced 2026-09-18
 ──────────────────────────────────────────────────────────────────
-EternalMonitor         ████████████████████████████  119  Rust
+EternalMonitor         ████████████████████████████  117  Rust
 Eternal-Rich-Presence  ███████                        29  Python
 codex-image-skill      ▏                               1  Python
 Whoisaldo              ▏                               1  you are here
 ──────────────────────────────────────────────────────────────────
-TOTAL                                                150
+TOTAL                                                148
 ```
 <!-- STARS:END -->
 
