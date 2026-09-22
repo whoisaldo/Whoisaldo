@@ -1,0 +1,27 @@
+<svg width="460" height="64" viewBox="0 0 460 64" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Open the portfolio at aliyounes.dev">
+<defs>
+<style><![CDATA[
+.hud{font-family:'JetBrains Mono','Fira Code',ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
+.cur{animation:blink 1.06s steps(1,end) infinite}
+@keyframes blink{0%,52%{opacity:1}53%,100%{opacity:0}}
+]]></style>
+<pattern id="scan" width="3" height="3" patternUnits="userSpaceOnUse"><rect width="3" height="1" fill="#000000" opacity="0.24"/></pattern>
+<filter id="edge" x="-10%" y="-30%" width="120%" height="160%"><feGaussianBlur stdDeviation="3"/></filter>
+<filter id="g00F0FF" x="-10%" y="-200%" width="120%" height="500%"><feGaussianBlur stdDeviation="1.5"/></filter><linearGradient id="p00F0FF" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#00F0FF" stop-opacity="0"/><stop offset="0.45" stop-color="#00F0FF" stop-opacity="1"/><stop offset="0.55" stop-color="#EAFEFF" stop-opacity="1"/><stop offset="1" stop-color="#00F0FF" stop-opacity="0"/></linearGradient>
+<clipPath id="clip4"><rect x="16" y="42" width="428" height="18"/></clipPath>
+<clipPath id="body"><rect x="3" y="3" width="454" height="58" rx="8"/></clipPath>
+</defs>
+<rect x="3" y="3" width="454" height="58" rx="8" fill="none" stroke="#FCEE0A" stroke-width="3" opacity="0.55" filter="url(#edge)"/>
+<rect x="3" y="3" width="454" height="58" rx="8" fill="#07070C" stroke="#FCEE0A" stroke-width="1.5"/>
+<g clip-path="url(#body)">
+<g clip-path="url(#clip4)">
+<g fill="#00F0FF" filter="url(#g00F0FF)"><rect x="16" y="51" width="40" height="2" rx="1" opacity="0.3"/><rect x="64" y="51" width="26" height="2" rx="1" opacity="0.3"/><rect x="98" y="51" width="214" height="2" rx="1" opacity="0.55"/><rect x="320" y="51" width="34" height="2" rx="1" opacity="0.22"/><rect x="362" y="51" width="26" height="2" rx="1" opacity="0.22"/><rect x="396" y="51" width="48" height="2" rx="1" opacity="0.3"/></g>
+<g stroke="#FCEE0A" stroke-width="1" opacity="0.34"><line x1="16" y1="49.5" x2="16" y2="54.5"/><line x1="54" y1="50.75" x2="54" y2="53.25"/><line x1="92" y1="50.75" x2="92" y2="53.25"/><line x1="130" y1="49.5" x2="130" y2="54.5"/><line x1="168" y1="50.75" x2="168" y2="53.25"/><line x1="206" y1="50.75" x2="206" y2="53.25"/><line x1="244" y1="49.5" x2="244" y2="54.5"/><line x1="282" y1="50.75" x2="282" y2="53.25"/><line x1="320" y1="50.75" x2="320" y2="53.25"/><line x1="358" y1="49.5" x2="358" y2="54.5"/><line x1="396" y1="50.75" x2="396" y2="53.25"/><line x1="434" y1="50.75" x2="434" y2="53.25"/></g>
+<rect x="16" y="49.5" width="132" height="5" rx="2.5" fill="url(#p00F0FF)" filter="url(#g00F0FF)"><animateTransform attributeName="transform" type="translate" from="-140 0" to="428 0" dur="3.0s" repeatCount="indefinite"/></rect>
+<rect x="16" y="50.5" width="46" height="3" rx="1.5" fill="#FCEE0A" opacity="0.5" filter="url(#g00F0FF)"><animateTransform attributeName="transform" type="translate" from="-60 0" to="428 0" dur="1.9s" begin="0.8s" repeatCount="indefinite"/></rect>
+</g>
+<rect width="460" height="64" fill="url(#scan)"/>
+</g>
+<g fill="none" stroke="#00F0FF" stroke-width="1.5" opacity="0.8"><path d="M12,22 L12,12 L22,12"/><path d="M438,12 L448,12 L448,22"/><path d="M12,42 L12,52 L22,52"/><path d="M438,52 L448,52 L448,42"/></g>
+<text class="hud" x="230.0" y="37" text-anchor="middle" font-size="13" letter-spacing="2.8" fill="#FCEE0A">&gt; OPEN PORTFOLIO<tspan fill="#5B6470"> // </tspan><tspan fill="#EAFEFF">ALIYOUNES.DEV</tspan><tspan class="cur" fill="#00F0FF"> _</tspan></text>
+</svg>
