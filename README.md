@@ -12,7 +12,7 @@
 
 Hi! I'm Ali, or you can call me Aldo. I'm a fourth year studying computer science and political science at Northeastern University in Boston, MA 📍.
 
-I like to work with deeply architected systems. Most of my work tends to revolve around automating, but I usually just kinda build a solution to anything really 🤷‍♂️.
+I like to work with deeply architected systems. Most of my work tends to revolve around automating, but I usually just kinda build a solution to anything really 🤷‍♂️. My favorite areas are systems, infrastructure, AI tooling and backend. The work I did at Philips and AWS is what I've enjoyed the most so far.
 
 I have a 2013 Audi S4 that makes around 540 whp. It's on a Jackal Stage 2+ tune and I love to work on it myself :p.
 
@@ -36,7 +36,7 @@ I have a 2013 Audi S4 that makes around 540 whp. It's on a Jackal Stage 2+ tune 
 <tr><td align="center"><img src="./logos/pawtograder.png" height="24" alt="Pawtograder"></td><td><a href="https://github.com/pawtograder"><b>Pawtograder</b></a></td><td>Backend Engineer, grading server</td><td>Aug 2026 to now</td></tr>
 <tr><td align="center"><picture><source media="(prefers-color-scheme: dark)" srcset="./logos/aws-dark.png"><img src="./logos/aws.png" height="24" alt="AWS"></picture></td><td><a href="https://github.com/aws"><b>Amazon Web Services</b></a></td><td>SDE Intern, CloudFormation Registry</td><td>Jun to Sep 2026</td></tr>
 <tr><td align="center"><img src="./logos/topchoice.png" height="24" alt="Top Choice Realty"></td><td><a href="https://topchoicerealtyny.com/"><b>Top Choice Realty</b></a></td><td>Frontend Developer Intern</td><td>Apr to Aug 2024</td></tr>
-<tr><td align="center"><img src="./logos/northeastern.png" height="24" alt="Northeastern University"></td><td><a href="https://github.com/northeastern"><b>Northeastern University</b></a></td><td>CS and Political Science, B.S.</td><td>class of 2027</td></tr>
+<tr><td align="center"><img src="./logos/northeastern.png" height="24" alt="Northeastern University"></td><td><a href="https://github.com/northeastern"><b>Northeastern University</b></a></td><td>CS and Political Science, B.S.</td><td>Class of 2027</td></tr>
 </table>
 
 <div align="center"><img src="./divider_cyan.svg" width="760" /></div>
