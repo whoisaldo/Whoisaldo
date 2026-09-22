@@ -31,12 +31,12 @@ I have a 2013 Audi S4 that makes around 540 whp. It's on a Jackal Stage 2+ tune 
 ## `> history`
 
 <table>
-<tr><td align="center"><img src="./logos/philips.png" height="24" alt="Philips"></td><td><b>Philips</b></td><td>SDE Co-op, System Integration</td><td>Jan 2026 to now</td></tr>
-<tr><td align="center"><picture><source media="(prefers-color-scheme: dark)" srcset="./logos/pinnatec-dark.png"><img src="./logos/pinnatec.png" height="24" alt="Pinnatec Auto"></picture></td><td><b>Pinnatec Auto</b></td><td>Lead Full Stack Engineer, Virtual Link</td><td>Sep 2026 to now</td></tr>
-<tr><td align="center"><img src="./logos/pawtograder.png" height="24" alt="Pawtograder"></td><td><b>Pawtograder</b></td><td>Backend Engineer, grading server</td><td>Aug 2026 to now</td></tr>
-<tr><td align="center"><picture><source media="(prefers-color-scheme: dark)" srcset="./logos/aws-dark.png"><img src="./logos/aws.png" height="24" alt="AWS"></picture></td><td><b>AWS</b></td><td>SDE Intern, CloudFormation Registry</td><td>Jun to Sep 2026</td></tr>
-<tr><td align="center"><img src="./logos/topchoice.png" height="24" alt="Top Choice Realty"></td><td><b>Top Choice Realty</b></td><td>Frontend Developer Intern</td><td>Apr to Aug 2024</td></tr>
-<tr><td align="center"><img src="./logos/northeastern.png" height="24" alt="Northeastern University"></td><td><b>Northeastern</b></td><td>CS and Political Science, B.S.</td><td>class of 2027</td></tr>
+<tr><td align="center"><img src="./logos/philips.png" height="24" alt="Philips"></td><td><a href="https://github.com/philips-software"><b>Philips</b></a></td><td>SDE Co-op, System Integration</td><td>Jan 2026 to now</td></tr>
+<tr><td align="center"><picture><source media="(prefers-color-scheme: dark)" srcset="./logos/pinnatec-dark.png"><img src="./logos/pinnatec.png" height="24" alt="Pinnatec Auto"></picture></td><td><a href="https://pinnatecauto.com/"><b>Pinnatec Auto</b></a></td><td>Lead Full Stack Engineer, Virtual Link</td><td>Sep 2026 to now</td></tr>
+<tr><td align="center"><img src="./logos/pawtograder.png" height="24" alt="Pawtograder"></td><td><a href="https://github.com/pawtograder"><b>Pawtograder</b></a></td><td>Backend Engineer, grading server</td><td>Aug 2026 to now</td></tr>
+<tr><td align="center"><picture><source media="(prefers-color-scheme: dark)" srcset="./logos/aws-dark.png"><img src="./logos/aws.png" height="24" alt="AWS"></picture></td><td><a href="https://github.com/aws"><b>AWS</b></a></td><td>SDE Intern, CloudFormation Registry</td><td>Jun to Sep 2026</td></tr>
+<tr><td align="center"><img src="./logos/topchoice.png" height="24" alt="Top Choice Realty"></td><td><a href="https://topchoicerealtyny.com/"><b>Top Choice Realty</b></a></td><td>Frontend Developer Intern</td><td>Apr to Aug 2024</td></tr>
+<tr><td align="center"><img src="./logos/northeastern.png" height="24" alt="Northeastern University"></td><td><a href="https://github.com/northeastern"><b>Northeastern</b></a></td><td>CS and Political Science, B.S.</td><td>class of 2027</td></tr>
 </table>
 
 <div align="center"><img src="./divider_cyan.svg" width="760" /></div>
