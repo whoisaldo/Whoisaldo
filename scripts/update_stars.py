@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Regenerates stars.svg and the SIGNAL block in README.md from the GitHub API.
+"""Regenerates stars.svg from the GitHub API.
 
 stars.svg is a live meter, not a time series, and that is deliberate. It was a
 cumulative-stargazers-over-time chart first. Plotted against a date axis, a repo
@@ -23,13 +23,12 @@ import datetime as dt
 import json
 import os
 import pathlib
-import re
 import urllib.error
 import urllib.request
 
 USER = "whoisaldo"
 ROOT = pathlib.Path(__file__).resolve().parent.parent
-TOP_N = 4          # rows in both the SIGNAL block and the meter panel
+TOP_N = 4          # rows in the meter panel
 
 INK, VOLT, FUCH, CYAN = "#07070C", "#FCEE0A", "#FF2E88", "#00F0FF"
 BRIGHT, DIM = "#EAFEFF", "#5B6470"
@@ -130,24 +129,6 @@ def panel(rows, total, now):
     return "\n".join(o) + "\n"
 
 
-# ----------------------------------------------------------------- the block
-BLOCKS = "█"
-
-
-def signal_block(rows, total, now):
-    top = max(r["stars"] for r in rows) or 1
-    name_w = max(len(r["name"]) for r in rows)
-    lines = [f"SIGNAL // stargazers across {USER}   ·   synced {now:%Y-%m-%d}",
-             "─" * 66]
-    for r in rows:
-        bar = BLOCKS * round(28 * r["stars"] / top) if r["stars"] else ""
-        bar = bar or "▏"
-        lines.append(f"{r['name']:<{name_w}}  {bar:<28} {r['stars']:>4}  {r['note']}")
-    lines += ["─" * 66,
-              f"{'TOTAL':<{name_w}}  {'':<28} {total:>4}"]
-    return "\n".join(lines)
-
-
 def main():
     now = dt.datetime.now(dt.timezone.utc).replace(tzinfo=None, microsecond=0)
     all_repos = repos()
@@ -163,21 +144,6 @@ def main():
     svg = panel(rows, total, now)
     (ROOT / "stars.svg").write_text(svg)
     print(f"stars.svg: {len(svg)} bytes, {len(rows)} meters")
-
-    readme = ROOT / "README.md"
-    text = readme.read_text()
-    block = signal_block(rows, total, now)
-    new = re.sub(
-        r"(<!-- STARS:START -->\n```\n).*?(\n```\n<!-- STARS:END -->)",
-        lambda m: m.group(1) + block + m.group(2),
-        text, flags=re.S,
-    )
-    if new != text:
-        readme.write_text(new)
-        print("README.md SIGNAL block updated")
-    else:
-        print("README.md unchanged")
-    print(block)
 
 
 if __name__ == "__main__":
