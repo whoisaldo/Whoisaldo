@@ -16,6 +16,10 @@ I like to work with deeply architected systems. Most of my work tends to revolve
 
 I have a 2013 Audi S4 that makes around 540 whp. It's on a Jackal Stage 2+ tune and I love to work on it myself :p.
 
+Check out my portfolio, it's pretty cool, especially if you're a cyberpunk fan 👇
+
+<div align="center"><a href="https://aliyounes.dev"><img src="./button.svg" width="460" alt="Open the portfolio at aliyounes.dev" /></a></div>
+
 <div align="center"><img src="./divider_yellow.svg" width="760" /></div>
 
 ## `> ls ./projects`

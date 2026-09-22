@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
-"""Writes hero.svg, the banner at the top of the README.
+"""Writes hero.svg, the banner at the top of the README, and button.svg,
+the portfolio button under the intro.
 
 Composition, top to bottom: a full-width beam, the ALDO wordmark with its
 chromatic glitch, a short beam under it, the tagline, a full-width beam.
@@ -155,6 +156,42 @@ def main():
     svg = "\n".join(o) + "\n"
     (ROOT / "hero.svg").write_text(svg)
     print(f"hero.svg: {len(svg)} bytes")
+    svg = button()
+    (ROOT / "button.svg").write_text(svg)
+    print(f"button.svg: {len(svg)} bytes")
+
+
+def button():
+    """A volt-bordered button with a cyan beam along its foot. The README wraps
+    it in a link to aliyounes.dev; the SVG itself is just the picture."""
+    bw, bh = 460, 64
+    o = [
+        f'<svg width="{bw}" height="{bh}" viewBox="0 0 {bw} {bh}" xmlns="http://www.w3.org/2000/svg" role="img" '
+        f'aria-label="Open the portfolio at aliyounes.dev">',
+        "<defs>",
+        f"<style><![CDATA[\n.hud{{font-family:{MONO}}}\n.cur{{animation:blink 1.06s steps(1,end) infinite}}\n"
+        "@keyframes blink{0%,52%{opacity:1}53%,100%{opacity:0}}\n]]></style>",
+        '<pattern id="scan" width="3" height="3" patternUnits="userSpaceOnUse"><rect width="3" height="1" fill="#000000" opacity="0.24"/></pattern>',
+        '<filter id="edge" x="-10%" y="-30%" width="120%" height="160%"><feGaussianBlur stdDeviation="3"/></filter>',
+        beam_defs(CYAN),
+        '<clipPath id="clip4"><rect x="16" y="42" width="428" height="18"/></clipPath>',
+        f'<clipPath id="body"><rect x="3" y="3" width="{bw - 6}" height="{bh - 6}" rx="8"/></clipPath>',
+        "</defs>",
+        f'<rect x="3" y="3" width="{bw - 6}" height="{bh - 6}" rx="8" fill="none" stroke="{VOLT}" stroke-width="3" opacity="0.55" filter="url(#edge)"/>',
+        f'<rect x="3" y="3" width="{bw - 6}" height="{bh - 6}" rx="8" fill="{INK}" stroke="{VOLT}" stroke-width="1.5"/>',
+        '<g clip-path="url(#body)">',
+        beam(16, 428, 52, CYAN, 4, comet_dur=3.0, spark_dur=1.9, spark_begin=0.8),
+        f'<rect width="{bw}" height="{bh}" fill="url(#scan)"/>',
+        "</g>",
+        f'<g fill="none" stroke="{CYAN}" stroke-width="1.5" opacity="0.8">'
+        '<path d="M12,22 L12,12 L22,12"/><path d="M438,12 L448,12 L448,22"/>'
+        '<path d="M12,42 L12,52 L22,52"/><path d="M438,52 L448,52 L448,42"/></g>',
+        f'<text class="hud" x="{bw / 2}" y="37" text-anchor="middle" font-size="13" letter-spacing="2.8" fill="{VOLT}">'
+        f'&gt; OPEN PORTFOLIO<tspan fill="{DIM}"> // </tspan><tspan fill="{BRIGHT}">ALIYOUNES.DEV</tspan>'
+        f'<tspan class="cur" fill="{CYAN}"> _</tspan></text>',
+        "</svg>",
+    ]
+    return "\n".join(o) + "\n"
 
 
 if __name__ == "__main__":
