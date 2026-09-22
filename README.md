@@ -6,11 +6,15 @@
 
 </div>
 
+<div align="center"><img src="./divider_cyan.svg" width="760" /></div>
+
 ## `> whoami`
 
 Ali Younes, Boston. I write systems software, iOS apps, and the web front-ends that sit on top of them. Most of what is here exists because something I wanted did not do what I asked, or cost too much. I over-engineer, and I keep the result intuitive.
 
-Three engineering jobs at once right now. Co-founder at [Sideband](https://sideband.studio), four of us, our own products, no client work. CS and Political Science at Northeastern, class of 2027. Daily driver is a supercharged Audi S4. 540 whp. Tuned it myself.
+Three engineering jobs at once right now. Co-founder at [Sideband](https://sideband.studio), a four-person software studio. CS and Political Science at Northeastern, class of 2027. Daily driver is a supercharged Audi S4. 540 whp.
+
+<div align="center"><img src="./divider_yellow.svg" width="760" /></div>
 
 ## `> ls ./projects`
 
@@ -20,8 +24,7 @@ Three engineering jobs at once right now. Co-founder at [Sideband](https://sideb
 **[Eternal Rich Presence](https://github.com/whoisaldo/Eternal-Rich-Presence)** · [eternalrichpresence.dev](https://eternalrichpresence.dev) · `Python` `Discord IPC` ![live](https://img.shields.io/badge/LIVE-FCEE0A?style=flat-square&labelColor=07070C)
 > Apple Music does not talk to Discord, and Listen Along is Spotify-only. This fixes both. pypresence is send-only, so I open Discord's IPC pipes over ctypes and speak the frame protocol by hand.
 
-**[EternalExchange](https://github.com/whoisaldo/EternalExchange)** · [eternalexchangemod.com](https://eternalexchangemod.com) · `Java 21` `Fabric` ![pre-release](https://img.shields.io/badge/PRE--RELEASE-FF2E88?style=flat-square&labelColor=07070C)
-> ProjectE is Forge-only, so I wrote the Fabric-native spin-off. At server start the solver walks the whole loaded recipe graph and prices every item in exact BigFraction arithmetic. Add another mod and its recipes get priced with no patch from me.
+<div align="center"><img src="./divider_pink.svg" width="760" /></div>
 
 ## `> history`
 
@@ -34,6 +37,8 @@ Three engineering jobs at once right now. Co-founder at [Sideband](https://sideb
 <tr><td align="center"><img src="./logos/northeastern.png" height="24" alt="Northeastern University"></td><td><b>Northeastern</b></td><td>CS and Political Science, B.S.</td><td>class of 2027</td></tr>
 </table>
 
+<div align="center"><img src="./divider_cyan.svg" width="760" /></div>
+
 ## `> cat ./stack`
 
 ```
@@ -42,6 +47,8 @@ web        React · React Native · Next.js · Node · Deno · Express · FastAP
 infra      AWS · Postgres · MongoDB · Supabase · Docker · Linux · GitHub Actions
 ai         OpenAI SDK · Claude SDK · MCP · Bedrock · Ollama
 ```
+
+<div align="center"><img src="./divider_yellow.svg" width="760" /></div>
 
 ## `> btop --user aldo`
 
