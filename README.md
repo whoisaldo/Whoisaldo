@@ -10,9 +10,11 @@
 
 ## `> whoami`
 
-Ali Younes, Boston. I write systems software, iOS apps, and the web front-ends that sit on top of them. Most of what is here exists because something I wanted did not do what I asked, or cost too much. I over-engineer, and I keep the result intuitive.
+Hi! I'm Ali, or you can call me Aldo. I'm a fourth year studying computer science and political science at Northeastern University in Boston, MA 📍.
 
-Three engineering jobs at once right now. Co-founder at [Sideband](https://sideband.studio), a four-person software studio. CS and Political Science at Northeastern, class of 2027. Daily driver is a supercharged Audi S4. 540 whp.
+I like to work with deeply architected systems. Most of my work tends to revolve around automating, but I usually just kinda build a solution to anything really 🤷‍♂️.
+
+I have a 2013 Audi S4 that makes around 540 whp. It's on a Jackal Stage 2+ tune and I love to work on it myself :p.
 
 <div align="center"><img src="./divider_yellow.svg" width="760" /></div>
 
