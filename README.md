@@ -2,7 +2,7 @@
 
 <img src="./hero.svg" width="100%" alt="ALDO. Software engineer. Systems, iOS and web. Boston." />
 
-[![Portfolio](https://img.shields.io/badge/PORTFOLIO-aliyounes.dev-FCEE0A?style=for-the-badge&labelColor=07070C)](https://aliyounes.dev) [![Resume](https://img.shields.io/badge/RESUME-read-00F0FF?style=for-the-badge&labelColor=07070C)](https://aliyounes.dev/resume) [![Sideband](https://img.shields.io/badge/STUDIO-sideband.studio-FF2E88?style=for-the-badge&labelColor=07070C)](https://sideband.studio) [![LinkedIn](https://img.shields.io/badge/LINKEDIN-connect-00F0FF?style=for-the-badge&labelColor=07070C)](https://www.linkedin.com/in/alialdoyounes/) [![Email](https://img.shields.io/badge/EMAIL-reach%20out-EAFEFF?style=for-the-badge&labelColor=07070C)](mailto:younes.al@northeastern.edu)
+[![Portfolio](https://img.shields.io/badge/PORTFOLIO-aliyounes.dev-FCEE0A?style=for-the-badge&labelColor=07070C)](https://aliyounes.dev) [![Resume](https://img.shields.io/badge/RESUME-read-00F0FF?style=for-the-badge&labelColor=07070C)](https://aliyounes.dev/resume) [![Sideband](https://img.shields.io/badge/STUDIO-sideband.studio-FF2E88?style=for-the-badge&labelColor=07070C)](https://sideband.studio) [![LinkedIn](https://img.shields.io/badge/LINKEDIN-connect-00F0FF?style=for-the-badge&labelColor=07070C)](https://www.linkedin.com/in/alialdoyounes/) [![Email](https://img.shields.io/badge/EMAIL-reach%20out-EAFEFF?style=for-the-badge&labelColor=07070C)](mailto:aldo@sideband.studio)
 
 </div>
 
@@ -24,7 +24,7 @@ Check out my portfolio, it's pretty cool, especially if you're a cyberpunk fan �
 
 ## `> ls ./projects`
 
-**[Eternal Monitor](https://github.com/whoisaldo/EternalMonitor)** · [eternalmonitor.dev](https://eternalmonitor.dev) · `Rust` `Swift` `Metal` ![in dev](https://img.shields.io/badge/IN_DEV-FF2E88?style=flat-square&labelColor=07070C)
+**[Eternal Monitor](https://github.com/sidebandstudio/EternalMonitor)** · [eternalmonitor.dev](https://eternalmonitor.dev) · `Rust` `Swift` `Metal` ![in dev](https://img.shields.io/badge/IN_DEV-FF2E88?style=flat-square&labelColor=07070C)
 > I refused to pay $40 for an iPad-as-second-display app that lagged. So I wrote my own. A Rust host captures the Windows desktop through DXGI, encodes H.264 on whatever silicon is in the machine, and sends every frame over UDP behind a 16-byte header I wrote. The iPad decodes on VideoToolbox and draws in Metal. No latency number yet, because I have not measured one.
 
 **[Eternal Rich Presence](https://github.com/whoisaldo/Eternal-Rich-Presence)** · [eternalrichpresence.dev](https://eternalrichpresence.dev) · `Python` `Discord IPC` ![live](https://img.shields.io/badge/LIVE-FCEE0A?style=flat-square&labelColor=07070C)
