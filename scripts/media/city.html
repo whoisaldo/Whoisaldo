@@ -1,0 +1,29 @@
+<!doctype html><html><head><meta charset="utf-8"><style>
+@font-face { font-family: 'Chakra Petch'; font-weight: 700; src: url(/assets/fonts/chakra-petch-latin-700-normal.woff2) format('woff2'); }
+@font-face { font-family: 'JBM'; font-weight: 100 800; src: url(/assets/fonts/jetbrains-mono-latin-wght-normal.woff2) format('woff2'); }
+html,body{margin:0;background:transparent}
+#card{position:relative;width:880px;height:400px;overflow:hidden;background:#050506;
+  clip-path:polygon(18px 0,100% 0,100% calc(100% - 18px),calc(100% - 18px) 100%,0 100%,0 18px)}
+#card img{position:absolute;left:0;top:-20px;width:880px;height:495px;display:block}
+#shade{position:absolute;inset:0;background:linear-gradient(180deg,rgba(5,5,6,0) 62%,rgba(5,5,6,.78) 100%)}
+#tag{position:absolute;left:28px;bottom:26px;display:flex;align-items:center;gap:10px;
+  background:#fcee0a;color:#050506;padding:9px 16px 9px 14px;font:700 15px/1 'Chakra Petch',sans-serif;letter-spacing:.06em;
+  clip-path:polygon(8px 0,100% 0,100% calc(100% - 8px),calc(100% - 8px) 100%,0 100%,0 8px)}
+#tag svg{width:13px;height:13px}
+#note{position:absolute;right:28px;bottom:33px;font:500 10.5px/1 'JBM',monospace;letter-spacing:.16em;color:rgba(236,234,228,.62);text-transform:uppercase}
+#black{position:absolute;inset:0;background:#000;opacity:0}
+</style></head><body>
+<div id="card"><img id="f"><div id="black"></div><div id="shade"></div>
+<div id="tag">ENTER THE CITY <svg viewBox="0 0 12 12"><path d="M3 9 9 3M4 3h5v5" fill="none" stroke="#050506" stroke-width="1.8"/></svg></div>
+<div id="note">aliyounes.dev &nbsp;·&nbsp; intro, captured live</div>
+</div>
+<script>
+document.fonts.load("700 15px 'Chakra Petch'").then(()=>document.fonts.ready).then(()=>{window.ready=true});
+window.show = async (src, black) => {
+  const img = document.getElementById('f');
+  img.src = src; await img.decode();
+  document.getElementById('black').style.opacity = black;
+  await new Promise(r => requestAnimationFrame(() => requestAnimationFrame(r)));
+  return true;
+};
+</script></body></html>

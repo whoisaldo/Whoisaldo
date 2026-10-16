@@ -1,14 +1,12 @@
-<div align="center">
+<a href="https://aliyounes.dev"><img src="./hero.webp" width="100%" alt="Ali Younes, software engineer: systems, infrastructure, AI tooling and backend. Boston, MA. His 2013 Audi S4 turns on a yellow ring." /></a>
 
-<img src="./hero.svg" width="100%" alt="ALDO. Software engineer. Systems, iOS and web. Boston." />
-
-[![Portfolio](https://img.shields.io/badge/PORTFOLIO-aliyounes.dev-FCEE0A?style=for-the-badge&labelColor=07070C)](https://aliyounes.dev) [![Resume](https://img.shields.io/badge/RESUME-read-00F0FF?style=for-the-badge&labelColor=07070C)](https://aliyounes.dev/resume) [![Sideband](https://img.shields.io/badge/STUDIO-sideband.studio-FF2E88?style=for-the-badge&labelColor=07070C)](https://sideband.studio) [![LinkedIn](https://img.shields.io/badge/LINKEDIN-connect-00F0FF?style=for-the-badge&labelColor=07070C)](https://www.linkedin.com/in/alialdoyounes/) [![Email](https://img.shields.io/badge/EMAIL-reach%20out-EAFEFF?style=for-the-badge&labelColor=07070C)](mailto:aldo@sideband.studio)
-
-</div>
-
-<div align="center"><img src="./divider_cyan.svg" width="760" /></div>
-
-## `> whoami`
+<p align="center">
+  <a href="https://aliyounes.dev"><b>aliyounes.dev</b></a> &nbsp;·&nbsp;
+  <a href="https://aliyounes.dev/resume">Resume</a> &nbsp;·&nbsp;
+  <a href="https://sideband.studio">Sideband Studio</a> &nbsp;·&nbsp;
+  <a href="https://www.linkedin.com/in/alialdoyounes/">LinkedIn</a> &nbsp;·&nbsp;
+  <a href="mailto:aldo@sideband.studio">aldo@sideband.studio</a>
+</p>
 
 Hi! I'm Ali, or you can call me Aldo. I'm a fourth year studying computer science and political science at Northeastern University in Boston, MA 📍.
 
@@ -18,21 +16,9 @@ I have a 2013 Audi S4 that makes around 540 whp. It's on a Jackal Stage 2+ tune 
 
 Check out my portfolio, it's pretty cool, especially if you're a cyberpunk fan 👇
 
-<div align="center"><a href="https://aliyounes.dev"><img src="./button.svg" width="460" alt="Open the portfolio at aliyounes.dev" /></a></div>
+<a href="https://aliyounes.dev"><img src="./city.webp" width="100%" alt="The intro of aliyounes.dev: the S4 drifts through a neon city at night. Enter the city." /></a>
 
-<div align="center"><img src="./divider_yellow.svg" width="760" /></div>
-
-## `> ls ./projects`
-
-**[Eternal Monitor](https://github.com/sidebandstudio/EternalMonitor)** · [eternalmonitor.dev](https://eternalmonitor.dev) · `Rust` `Swift` `Metal` ![in dev](https://img.shields.io/badge/IN_DEV-FF2E88?style=flat-square&labelColor=07070C)
-> I refused to pay $40 for an iPad-as-second-display app that lagged. So I wrote my own. A Rust host captures the Windows desktop through DXGI, encodes H.264 on whatever silicon is in the machine, and sends every frame over UDP behind a 16-byte header I wrote. The iPad decodes on VideoToolbox and draws in Metal. No latency number yet, because I have not measured one.
-
-**[Eternal Rich Presence](https://github.com/whoisaldo/Eternal-Rich-Presence)** · [eternalrichpresence.dev](https://eternalrichpresence.dev) · `Python` `Discord IPC` ![live](https://img.shields.io/badge/LIVE-FCEE0A?style=flat-square&labelColor=07070C)
-> Apple Music does not talk to Discord, and Listen Along is Spotify-only. This fixes both. pypresence is send-only, so I open Discord's IPC pipes over ctypes and speak the frame protocol by hand.
-
-<div align="center"><img src="./divider_pink.svg" width="760" /></div>
-
-## `> history`
+### History
 
 <table>
 <tr><td align="center"><picture><source media="(prefers-color-scheme: dark)" srcset="./logos/aws-dark.png"><img src="./logos/aws.png" height="24" alt="AWS"></picture></td><td><a href="https://github.com/aws"><b>Amazon Web Services</b></a></td><td>SDE, Amazon Dedicated Cloud</td><td>Incoming FTE July 2027</td></tr>
@@ -44,26 +30,4 @@ Check out my portfolio, it's pretty cool, especially if you're a cyberpunk fan �
 <tr><td align="center"><img src="./logos/northeastern.png" height="24" alt="Northeastern University"></td><td><a href="https://github.com/northeastern"><b>Northeastern University</b></a></td><td>CS and Political Science, B.S.</td><td>Class of 2027</td></tr>
 </table>
 
-<div align="center"><img src="./divider_cyan.svg" width="760" /></div>
-
-## `> cat ./stack`
-
-```
-languages  Rust · Swift · TypeScript · Java · Python · C# · C++ · Go · PHP
-web        React · React Native · Next.js · Node · Deno · Express · FastAPI
-infra      AWS · Postgres · MongoDB · Supabase · Docker · Linux · GitHub Actions
-ai         OpenAI SDK · Claude SDK · MCP · Bedrock · Ollama
-```
-
-<div align="center"><img src="./divider_yellow.svg" width="760" /></div>
-
-## `> btop --user aldo`
-
-<div align="center">
-
-<img src="./stars.svg" width="820" alt="Stargazer counts by repository" />
-
-<img height="165" src="./cards/stats.svg" alt="GitHub stats" />
-<img height="165" src="./cards/top-langs.svg" alt="Most used languages" />
-
-</div>
+<a href="https://github.com/whoisaldo?tab=repositories&sort=stargazers"><img src="./panel.svg" width="100%" alt="My GitHub stats: contributions per week over the last year, public commits, active days and current streak; languages by share of code; stargazers across my repos; merged pull requests in public repos over the last 90 days, ranked by repo. Updated daily." /></a>

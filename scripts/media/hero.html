@@ -1,0 +1,124 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+@font-face { font-family: 'Chakra Petch'; font-weight: 700; src: url(/assets/fonts/chakra-petch-latin-700-normal.woff2) format('woff2'); }
+@font-face { font-family: 'Barlow'; font-weight: 400; src: url(/assets/fonts/barlow-latin-400-normal.woff2) format('woff2'); }
+@font-face { font-family: 'JBM'; font-weight: 100 800; src: url(/assets/fonts/jetbrains-mono-latin-wght-normal.woff2) format('woff2'); }
+html, body { margin: 0; background: transparent; }
+:root { --W: 880px; --H: 300px; --cut: 18px; }
+#card {
+  position: relative; width: var(--W); height: var(--H); overflow: hidden;
+  background: #050506;
+  clip-path: polygon(var(--cut) 0, 100% 0, 100% calc(100% - var(--cut)), calc(100% - var(--cut)) 100%, 0 100%, 0 var(--cut));
+}
+#grid {
+  position: absolute; inset: 0;
+  background-image:
+    linear-gradient(to right, rgba(236,234,228,.035) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(236,234,228,.035) 1px, transparent 1px);
+  background-size: 36px 36px;
+  background-position: -1px -1px;
+  mask-image: linear-gradient(90deg, #000 0%, #000 40%, transparent 100%);
+}
+#hazard {
+  position: absolute; left: 0; right: 0; bottom: 0; height: 5px;
+  background-image: repeating-linear-gradient(45deg, #fcee0a 0 6px, transparent 6px 12px);
+  opacity: .45;
+}
+#gl { position: absolute; right: -40px; top: 0; width: 540px; height: 300px; }
+#copy { position: absolute; left: 44px; top: 50px; }
+.label { font: 600 12.5px/1 'JBM', monospace; letter-spacing: .16em; color: #fcee0a; text-transform: uppercase; display: flex; align-items: center; gap: 9px; }
+.label i { width: 6px; height: 6px; border-radius: 50%; background: #fcee0a; display: block; }
+h1 { margin: 22px 0 0; font: 700 64px/0.9 'Chakra Petch', sans-serif; color: #eceae4; letter-spacing: -.005em; }
+.sub { margin-top: 18px; font: 400 19px/1.35 'Barlow', sans-serif; color: #a5a59f; max-width: 460px; }
+.foot { position: absolute; left: 44px; bottom: 32px; font: 500 12px/1 'JBM', monospace; letter-spacing: .12em; color: #85857f; text-transform: uppercase; }
+</style>
+<script type="importmap">
+{ "imports": { "three": "/three/build/three.module.js", "three/addons/": "/three/examples/jsm/" } }
+</script>
+</head>
+<body>
+<div id="card">
+  <div id="grid"></div>
+  <canvas id="gl"></canvas>
+  <div id="copy">
+    <div class="label"><i></i>Software engineer</div>
+    <h1>ALI YOUNES</h1>
+    <div class="sub">Systems, infrastructure, AI tooling and backend.</div>
+  </div>
+  <div class="foot">Boston, MA &nbsp;·&nbsp; Northeastern, class of 2027</div>
+  <div id="hazard"></div>
+</div>
+<script type="module">
+import * as THREE from 'three';
+import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
+import { MeshoptDecoder } from 'three/addons/libs/meshopt_decoder.module.js';
+import { RoomEnvironment } from 'three/addons/environments/RoomEnvironment.js';
+
+const canvas = document.getElementById('gl');
+const DPR = window.devicePixelRatio || 1;
+const W = 540, H = 300;
+const renderer = new THREE.WebGLRenderer({ canvas, alpha: true, antialias: true, preserveDrawingBuffer: true });
+renderer.setPixelRatio(DPR);
+renderer.setSize(W, H, false);
+renderer.setClearColor(0x000000, 0);
+renderer.outputColorSpace = THREE.SRGBColorSpace;
+renderer.toneMapping = THREE.ACESFilmicToneMapping;
+renderer.toneMappingExposure = 1.3;
+
+const scene = new THREE.Scene();
+const camera = new THREE.PerspectiveCamera(24, W / H, 0.1, 200);
+camera.position.set(0, 3.3, 11);
+camera.lookAt(0, 0.45, 0);
+
+const pmrem = new THREE.PMREMGenerator(renderer);
+scene.environment = pmrem.fromScene(new RoomEnvironment(), 0.04).texture;
+scene.environmentIntensity = 0.32;
+pmrem.dispose();
+scene.add(new THREE.HemisphereLight(0x8fb4ff, 0x1a0a14, 0.5));
+const key = new THREE.DirectionalLight(0xd0e4e7, 0.85); key.position.set(6, 9, 9);
+const rimM = new THREE.DirectionalLight(0xff68ad, 1.8); rimM.position.set(12, 6, -20);
+const rimC = new THREE.DirectionalLight(0x79ffd7, 1.4); rimC.position.set(-5, 5, -28);
+scene.add(key, rimM, rimC);
+
+// Contact shadow: a soft dark disc under the car.
+function disc(size, inner, outer, alpha) {
+  const c = document.createElement('canvas'); c.width = c.height = size;
+  const g = c.getContext('2d');
+  const grd = g.createRadialGradient(size/2, size/2, size/2*inner, size/2, size/2, size/2*outer);
+  grd.addColorStop(0, `rgba(0,0,0,${alpha})`); grd.addColorStop(1, 'rgba(0,0,0,0)');
+  g.fillStyle = grd; g.fillRect(0, 0, size, size);
+  const t = new THREE.CanvasTexture(c); t.colorSpace = THREE.SRGBColorSpace; return t;
+}
+const shadow = new THREE.Mesh(new THREE.PlaneGeometry(6.2, 6.2),
+  new THREE.MeshBasicMaterial({ map: disc(256, 0.2, 1, 0.9), transparent: true, depthWrite: false, toneMapped: false }));
+shadow.rotation.x = -Math.PI / 2; shadow.position.y = 0.005; shadow.scale.set(0.62, 1, 1);
+scene.add(shadow);
+
+// The yellow ring from the portfolio's landing page.
+const ring = new THREE.Mesh(new THREE.RingGeometry(2.85, 2.885, 256),
+  new THREE.MeshBasicMaterial({ color: 0xfcee0a, transparent: true, opacity: 0.85, toneMapped: false, side: THREE.DoubleSide }));
+ring.rotation.x = -Math.PI / 2; ring.position.y = 0.002;
+scene.add(ring);
+
+const pivot = new THREE.Group(); scene.add(pivot);
+const gltf = await new GLTFLoader().setMeshoptDecoder(MeshoptDecoder).loadAsync('/model/ali-s4.glb');
+const car = gltf.scene;
+const box = new THREE.Box3().setFromObject(car);
+const center = box.getCenter(new THREE.Vector3());
+car.position.set(-center.x, -box.min.y, -center.z);
+pivot.add(car);
+
+window.renderAt = (deg) => {
+  pivot.rotation.y = THREE.MathUtils.degToRad(deg);
+  renderer.render(scene, camera);
+  return true;
+};
+await document.fonts.ready;
+window.renderAt(35);
+window.ready = true;
+</script>
+</body>
+</html>

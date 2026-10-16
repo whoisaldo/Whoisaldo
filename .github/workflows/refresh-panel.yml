@@ -1,4 +1,4 @@
-name: refresh-cards
+name: refresh-panel
 
 on:
   schedule:
@@ -9,7 +9,7 @@ permissions:
   contents: write
 
 concurrency:
-  group: refresh-cards
+  group: refresh-panel
   cancel-in-progress: true
 
 jobs:
@@ -18,20 +18,20 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Fetch fresh cards
+      - name: Regenerate panel.svg
         continue-on-error: true
         env:
           GH_TOKEN: ${{ github.token }}
-        run: bash scripts/refresh-cards.sh
+        run: python3 scripts/panel.py
 
-      - name: Commit updated cards
+      - name: Commit the panel
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add cards stars.svg
+          git add panel.svg
           if git diff --cached --quiet; then
-            echo "cards unchanged"
+            echo "panel unchanged"
           else
-            git commit -m "chore: refresh stat cards and stargazer chart"
+            git commit -m "chore: refresh GitHub stats panel"
             git push
           fi
