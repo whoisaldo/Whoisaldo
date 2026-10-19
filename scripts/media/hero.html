@@ -70,8 +70,8 @@ renderer.toneMappingExposure = 1.3;
 
 const scene = new THREE.Scene();
 const camera = new THREE.PerspectiveCamera(24, W / H, 0.1, 200);
-camera.position.set(0, 3.3, 11);
-camera.lookAt(0, 0.45, 0);
+camera.position.set(0, 3.9, 13.3);
+camera.lookAt(0, 0.35, 0);
 
 const pmrem = new THREE.PMREMGenerator(renderer);
 scene.environment = pmrem.fromScene(new RoomEnvironment(), 0.04).texture;
@@ -92,24 +92,32 @@ function disc(size, inner, outer, alpha) {
   g.fillStyle = grd; g.fillRect(0, 0, size, size);
   const t = new THREE.CanvasTexture(c); t.colorSpace = THREE.SRGBColorSpace; return t;
 }
-const shadow = new THREE.Mesh(new THREE.PlaneGeometry(6.2, 6.2),
-  new THREE.MeshBasicMaterial({ map: disc(256, 0.2, 1, 0.9), transparent: true, depthWrite: false, toneMapped: false }));
-shadow.rotation.x = -Math.PI / 2; shadow.position.y = 0.005; shadow.scale.set(0.62, 1, 1);
-scene.add(shadow);
 
 // The yellow ring from the portfolio's landing page.
-const ring = new THREE.Mesh(new THREE.RingGeometry(2.85, 2.885, 256),
+const ring = new THREE.Mesh(new THREE.RingGeometry(3.6, 3.644, 256),
   new THREE.MeshBasicMaterial({ color: 0xfcee0a, transparent: true, opacity: 0.85, toneMapped: false, side: THREE.DoubleSide }));
 ring.rotation.x = -Math.PI / 2; ring.position.y = 0.002;
 scene.add(ring);
 
 const pivot = new THREE.Group(); scene.add(pivot);
-const gltf = await new GLTFLoader().setMeshoptDecoder(MeshoptDecoder).loadAsync('/model/ali-s4.glb');
-const car = gltf.scene;
-const box = new THREE.Box3().setFromObject(car);
-const center = box.getCenter(new THREE.Vector3());
-car.position.set(-center.x, -box.min.y, -center.z);
-pivot.add(car);
+const loader = new GLTFLoader().setMeshoptDecoder(MeshoptDecoder);
+const [s4, s6] = await Promise.all(['/model/ali-s4.glb', '/model/ali-s6.glb'].map((u) => loader.loadAsync(u).then((g) => g.scene)));
+// Side by side with a gap between the mirrors, the S6 on the left seen from
+// behind, the way the two are parked in the garage photo.
+const gap = 0.8;
+const boxes = [s4, s6].map((car) => new THREE.Box3().setFromObject(car));
+const widths = boxes.map((b) => b.max.x - b.min.x);
+[[s4, -(gap + widths[0]) / 2], [s6, (gap + widths[1]) / 2]].forEach(([car, x], i) => {
+  const box = boxes[i], size = box.getSize(new THREE.Vector3()), c = box.getCenter(new THREE.Vector3());
+  car.position.set(x - c.x, -box.min.y, -c.z);
+  pivot.add(car);
+  // Contact shadow: a soft dark disc under each car.
+  const shadow = new THREE.Mesh(new THREE.PlaneGeometry(1, 1),
+    new THREE.MeshBasicMaterial({ map: disc(256, 0.2, 1, 0.9), transparent: true, depthWrite: false, toneMapped: false }));
+  shadow.rotation.x = -Math.PI / 2; shadow.position.set(x, 0.005, 0);
+  shadow.scale.set(size.x * 2, size.z * 1.3, 1);
+  pivot.add(shadow);
+});
 
 window.renderAt = (deg) => {
   pivot.rotation.y = THREE.MathUtils.degToRad(deg);

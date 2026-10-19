@@ -1,14 +1,11 @@
 #!/usr/bin/env python3
 """Regenerates panel.svg, the live panel at the bottom of the README.
 
-Four sections. GitHub: contributions over the last year as one LED bar per
+Two sections. GitHub: contributions over the last year as one LED bar per
 week, next to public commits, active days and the current streak. The day
 counts are read off the public profile, so the total matches the one it shows.
-Languages: share of code by bytes across the public repos below, markup left
-out. Stargazers: total stars across the owner's repos and the Sideband Studio
-org, with a meter per repo. Merged pull requests: everything merged in public
-repos over the last 90 days, ranked by repo, plus upstream repos (someone
-else's, with a real following) next to their star counts.
+Stargazers: total stars across the owner's repos and the Sideband Studio org,
+with a meter per repo.
 
 Fonts are embedded as data URIs because an SVG loaded through <img> cannot
 fetch anything. All are OFL; the licenses sit next to them in assets/fonts.
@@ -29,12 +26,8 @@ import urllib.request
 from xml.sax.saxutils import escape
 
 USER = "whoisaldo"
-OWN = ["whoisaldo", "sidebandstudio"]   # repos counted for stars and languages; never "upstream"
-SKIP = {"emmabostian/developer-portfolios"}  # a portfolio listing, not code
-MARKUP = {"HTML", "CSS", "SCSS"}  # not counted as languages
-MIN_STARS = 1000
-DAYS = 90
-STAR_ROWS, PR_ROWS, LANG_ROWS = 2, 3, 6
+OWN = ["whoisaldo", "sidebandstudio"]   # repos counted for stars
+STAR_ROWS = 2
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 FONTS = ROOT / "assets" / "fonts"
@@ -87,34 +80,8 @@ def own_repos():
     return sorted(out, key=lambda kv: (-kv[1], kv[0].lower()))
 
 
-def languages(repos):
-    sizes = {}
-    for repo in repos:
-        for lang, n in api(f"repos/{repo}/languages").items():
-            if lang not in MARKUP:
-                sizes[lang] = sizes.get(lang, 0) + n
-    total = sum(sizes.values())
-    return sorted(((lang, 100 * n / total) for lang, n in sizes.items()), key=lambda kv: -kv[1])
-
-
 def search_count(kind, q):
     return api(f"search/{kind}?q={urllib.parse.quote(q)}&per_page=1")["total_count"]
-
-
-def merged_prs(since):
-    q = f"author:{USER} is:pr is:merged is:public merged:>={since:%Y-%m-%d}"
-    items, page = [], 1
-    while True:
-        data = api(f"search/issues?q={urllib.parse.quote(q)}&per_page=100&page={page}")
-        items += data["items"]
-        if len(items) >= data["total_count"] or not data["items"] or page == 10:
-            return items
-        page += 1
-
-
-def short(n):
-    # Round down, so the page never shows more than the repo has.
-    return f"{n // 100 / 10:.1f}K" if n >= 1000 else str(n)
 
 
 def font(name, file):
@@ -143,16 +110,16 @@ def headline(o, top, total, caption, sub, height):
     o.append(f'<rect x="262" y="{top + 6}" width="1" height="{height - 6}" fill="{LINE}"/>')
 
 
-def meters(o, x0, x1, top, rows, start, segments=SEGMENTS, peak=None, fmt=str):
-    """One LED meter per row, scaled to the peak."""
-    seg_w = (x1 - x0) / segments
-    peak = peak or (rows[0][1] if rows else 1)
+def meters(o, x0, x1, top, rows, start):
+    """One LED meter per row, scaled to the first."""
+    seg_w = (x1 - x0) / SEGMENTS
+    peak = rows[0][1] if rows else 1
     for i, (name, n) in enumerate(rows):
         y = top + 20 + i * 38
-        lit = max(1, round(segments * n / peak))
+        lit = max(1, round(SEGMENTS * n / peak))
         o.append(f'<text class="m" x="{x0}" y="{y}" font-size="12.5" fill="{BONE}">{escape(name)}</text>')
-        o.append(f'<text class="d" x="{x1}" y="{y + 1}" font-size="17" fill="{VOLT}" text-anchor="end">{fmt(n)}</text>')
-        for k in range(segments):
+        o.append(f'<text class="d" x="{x1}" y="{y + 1}" font-size="17" fill="{VOLT}" text-anchor="end">{n}</text>')
+        for k in range(SEGMENTS):
             sx = x0 + k * seg_w
             if k < lit:
                 # Lit is the resting state, so a viewer that skips SMIL still
@@ -224,23 +191,19 @@ def streaks(days):
     return current, longest
 
 
-def panel(days, commits, langs, repos, prs, ranked, upstream, today):
+def panel(days, commits, repos, today):
     stars = [r for r in repos if r[1]]
     current, longest = streaks(days)
 
     gh_top = 66
     base = gh_top + 124 + 30 + LEVELS * 7
-    lang_label = base + 18 + 54
-    lang_top = lang_label + 20
-    star_label = lang_top + 38 * (LANG_ROWS // 2) + 50
+    star_label = base + 18 + 54
     star_top = star_label + 20
-    pr_label = star_top + section_height(STAR_ROWS, None) + 50
-    pr_top = pr_label + 20
-    H = pr_top + section_height(PR_ROWS, True) + (70 if upstream else 24)
+    H = star_top + section_height(STAR_ROWS, None) + 32
     cut = 14
     o = [f'<svg width="{W}" height="{H}" viewBox="0 0 {W} {H}" xmlns="http://www.w3.org/2000/svg" role="img" '
          f'aria-label="{sum(n for _, n in days)} contributions in the last year; {sum(n for _, n in stars)} '
-         f'stargazers; {len(prs)} merged pull requests in public repos over the last {DAYS} days">',
+         f'stargazers">',
          "<defs><style><![CDATA[",
          font("Chakra Petch", "chakra-petch-latin-700-normal.woff2"),
          font("JBM", "jetbrains-mono-latin-wght-normal.woff2"),
@@ -267,36 +230,10 @@ def panel(days, commits, langs, repos, prs, ranked, upstream, today):
         o.append(f'<text class="m k" x="{x}" y="{gh_top + 118}" font-size="10" fill="{DIM}">{sub}</text>')
     weekly(o, base, days, 0.3)
 
-    o.append(f'<rect x="40" y="{lang_label - 26}" width="{W - 80}" height="1" fill="{LINE}"/>')
-    label(o, lang_label, f"LANGUAGES · SHARE OF CODE ACROSS {len(repos)} PUBLIC REPOS")
-    rows, half = langs[:LANG_ROWS], LANG_ROWS // 2
-    pct = lambda n: f"{n:.1f}%"
-    peak = rows[0][1] if rows else 1
-    meters(o, 40, W / 2 - 20, lang_top, rows[:half], 0.9, 28, peak, pct)
-    meters(o, W / 2 + 20, W - 40, lang_top, rows[half:], 1.2, 28, peak, pct)
-
     o.append(f'<rect x="40" y="{star_label - 26}" width="{W - 80}" height="1" fill="{LINE}"/>')
     label(o, star_label, "STARGAZERS")
     section(o, star_top, sum(n for _, n in stars), f"STARS ACROSS {len(stars)} REPOS",
-            None, stars[:STAR_ROWS], 1.5)
-
-    o.append(f'<rect x="40" y="{pr_label - 26}" width="{W - 80}" height="1" fill="{LINE}"/>')
-    label(o, pr_label, f"MERGED PULL REQUESTS · LAST {DAYS} DAYS")
-    section(o, pr_top, len(prs), "MERGED, PUBLIC REPOS",
-            f"ACROSS {len(ranked)} REPOS", ranked[:PR_ROWS], 1.9)
-
-    # upstream: someone else's repo, with its star count
-    if upstream:
-        y = H - 30
-        o.append(f'<rect x="40" y="{y - 22}" width="{W - 80}" height="1" fill="{LINE}"/>')
-        o.append(f'<text class="m k" x="40" y="{y}" font-size="10" fill="{VOLT}">UPSTREAM</text>')
-        x = 140
-        for repo, n, count in upstream:
-            meta = f"★ {short(count)} · {n} MERGED"
-            o.append(f'<text class="m" x="{x}" y="{y}" font-size="12.5" fill="{BONE}">{escape(repo)}</text>')
-            mx = x + len(repo) * 7.55 + 14
-            o.append(f'<text class="m k" x="{mx:.1f}" y="{y}" font-size="10" fill="{MUTED}">{meta}</text>')
-            x = mx + len(meta) * 7.6 + 34
+            None, stars[:STAR_ROWS], 0.9)
     o.append("</svg>")
     return "\n".join(o) + "\n"
 
@@ -306,29 +243,10 @@ def main():
     days = calendar()
     commits = search_count("commits", f"author:{USER} is:public")
     repos = own_repos()
-    langs = languages([name for name, _ in repos])
-    prs = merged_prs(today - dt.timedelta(days=DAYS))
-    counts = {}
-    for pr in prs:
-        repo = pr["repository_url"].split("/repos/", 1)[1]
-        counts[repo] = counts.get(repo, 0) + 1
-    ranked = sorted(counts.items(), key=lambda kv: (-kv[1], kv[0].lower()))
-
-    upstream = []
-    for repo, n in ranked:
-        if repo.split("/")[0].lower() in OWN or repo in SKIP:
-            continue
-        count = api(f"repos/{repo}")["stargazers_count"]
-        if count >= MIN_STARS:
-            upstream.append((repo, n, count))
-    upstream.sort(key=lambda u: -u[2])
-
-    svg = panel(days, commits, langs, repos, prs, ranked, upstream[:2], today)
+    svg = panel(days, commits, repos, today)
     (ROOT / "panel.svg").write_text(svg)
     print(f"panel.svg: {sum(n for _, n in days)} contributions, {commits} commits, "
-          f"top languages {[(l, round(p, 1)) for l, p in langs[:LANG_ROWS]]}, "
-          f"{sum(n for _, n in repos)} stars in {sum(1 for _, n in repos if n)} repos, "
-          f"{len(prs)} merged PRs in {len(ranked)} repos, upstream={[(r, s) for r, _, s in upstream]}")
+          f"{sum(n for _, n in repos)} stars in {sum(1 for _, n in repos if n)} repos")
 
 
 if __name__ == "__main__":

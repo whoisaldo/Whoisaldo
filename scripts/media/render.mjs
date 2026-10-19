@@ -4,16 +4,17 @@
 //   node scripts/media/render.mjs hero   -> hero.webp
 //   node scripts/media/render.mjs city   -> city.webp
 //
-// hero: a 360° turntable of the S4 from the portfolio (three.js, same lights),
-// next to the name. 120 frames at 50 ms, rendered one by one so it loops clean.
-// city: the S4's drift in the aliyounes.dev intro, recorded live, slowed to
+// hero: a 360° turntable of the S4 and the S6 from the portfolio (three.js,
+// same lights), parked side by side next to the name. 120 frames at 50 ms,
+// rendered one by one so it loops clean.
+// city: the S4's drift in the playground's intro, recorded live, slowed to
 // about half speed and faded through black at the seam. CITY_FROM/CITY_TO are
 // where the drift sits in the intro today. Its timing moves by a few tenths of
 // a second between runs, so look at the result and nudge the window if it
 // caught the title card or missed the car.
 //
 // Needs: a Portfolio checkout (PORTFOLIO, default ../Portfolio next to this
-// repo) for three.js and the model, `npm i --no-save playwright`, and
+// repo) for three.js and the models, `npm i --no-save playwright`, and
 // img2webp (brew install webp). The city capture needs a real GPU (Metal).
 import { chromium } from "playwright";
 import { createServer } from "node:http";
@@ -24,14 +25,14 @@ import { extname, join, resolve } from "node:path";
 
 const ROOT = resolve(import.meta.dirname, "../..");
 const PORTFOLIO = resolve(process.env.PORTFOLIO || join(ROOT, "../Portfolio"));
-const CITY_FROM = 23.2, CITY_TO = 24.7, CITY_FPS = 40;
+const CITY_FROM = 23.35, CITY_TO = 24.85, CITY_FPS = 40;
 const TYPES = { ".html": "text/html", ".js": "text/javascript", ".mjs": "text/javascript",
   ".woff2": "font/woff2", ".glb": "model/gltf-binary", ".jpg": "image/jpeg" };
 
 function serve(frames) {
   const route = (url) => {
     if (url.startsWith("/three/")) return join(PORTFOLIO, "node_modules", url);
-    if (url === "/model/ali-s4.glb") return join(PORTFOLIO, "public/models/ali-s4.glb");
+    if (url.startsWith("/model/")) return join(PORTFOLIO, "public/models", url.slice(7));
     if (url.startsWith("/frames/")) return join(frames, url.slice(8));
     return join(ROOT, url);
   };
@@ -70,9 +71,13 @@ async function hero(base, work) {
 async function city(base, work) {
   const browser = await chromium.launch({ channel: "chromium", args: ["--use-angle=metal", "--enable-gpu"] });
   const page = await browser.newPage({ viewport: { width: 1440, height: 810 } });
-  await page.goto("https://aliyounes.dev", { waitUntil: "load", timeout: 60000 });
+  await page.goto("https://aliyounes.dev/playground", { waitUntil: "load", timeout: 60000 });
+  // The door offers "Enter silent" while the city is still downloading; a
+  // click then holds the intro until it is in. Wait for the door's "Ready".
   await page.waitForSelector("text=ENTER SILENT", { timeout: 90000 });
-  await page.waitForTimeout(3000);
+  await page.waitForFunction(() => [...document.querySelectorAll("body *")]
+    .some((e) => !e.children.length && e.textContent.trim() === "Ready"), null, { timeout: 90000 });
+  await page.waitForTimeout(1000);
 
   // Record the intro with its real timestamps, then pick frames by time.
   const cdp = await page.context().newCDPSession(page);
