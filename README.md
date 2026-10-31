@@ -36,4 +36,4 @@ Check out my portfolio, it's pretty cool, especially if you're a cyberpunk fan ð
 <tr><td align="center"><img src="./logos/northeastern.png" height="24" alt="Northeastern University"></td><td><a href="https://github.com/northeastern"><b>Northeastern University</b></a></td><td>CS and Political Science, B.S.</td><td>Class of 2027</td></tr>
 </table>
 
-<a href="https://github.com/whoisaldo?tab=repositories&sort=stargazers"><img src="./panel.svg" width="100%" alt="My GitHub stats: contributions per week over the last year, public commits, active days and current streak; stargazers across my repos. Updated daily." /></a>
+<a href="https://github.com/whoisaldo?tab=repositories&sort=stargazers"><img src="./panel.svg" width="100%" alt="My GitHub stats: contributions over the last year, public commits, active days and current streak; stargazers across my repos. Updated daily." /></a>
