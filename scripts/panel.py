@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
 """Regenerates panel.svg, the live panel at the bottom of the README.
 
-Two sections. GitHub: contributions over the last year as one LED bar per
-week, next to public commits, active days and the current streak. The day
-counts are read off the public profile, so the total matches the one it shows.
+Two sections. GitHub: contributions over the last year, next to public
+commits, active days and the current and longest streaks. The day counts are
+read off the public profile, so the total matches the one it shows.
 Stargazers: total stars across the owner's repos and the Sideband Studio org,
 with a meter per repo.
 
@@ -17,7 +17,6 @@ the previous panel.svg in place.
 import base64
 import datetime as dt
 import json
-import math
 import os
 import pathlib
 import re
@@ -35,8 +34,6 @@ FONTS = ROOT / "assets" / "fonts"
 INK, LINE, BONE, DIM, MUTED, VOLT = "#050506", "#24242a", "#eceae4", "#5c5c58", "#9a9a94", "#fcee0a"
 W = 880
 SEGMENTS = 40
-BAR, BAR_PITCH, LEVELS = 11, 15, 12   # weekly bars: width, pitch, segments
-MONTHS = "JAN FEB MAR APR MAY JUN JUL AUG SEP OCT NOV DEC".split()
 
 
 def api(path):
@@ -139,43 +136,6 @@ def section(o, top, total, caption, sub, rows, start):
     meters(o, 292, W - 40, top, rows, start)
 
 
-def weekly(o, base, days, start):
-    """One LED bar per week, square-root scaled so quiet weeks still show."""
-    weeks = {}
-    for d, n in days:
-        day = dt.date.fromisoformat(d)
-        sunday = day - dt.timedelta(days=(day.weekday() + 1) % 7)
-        weeks[sunday] = weeks.get(sunday, 0) + n
-    weeks = sorted(weeks.items())
-    peak = max(n for _, n in weeks) or 1
-    x0 = (W - len(weeks) * BAR_PITCH + (BAR_PITCH - BAR)) / 2
-    # Each bar is a dashed stroke from the bottom up: 5px segment, 2px gap.
-    # Strokes stay crisp when GitHub scales the image; pattern fills do not.
-    end = lambda k: base - 7 * k + 2   # top edge of segment k
-    bar = lambda x, k, paint: (f'<line x1="{x}" y1="{base}" x2="{x}" y2="{end(k)}" stroke-width="{BAR}" '
-                               f'stroke-dasharray="5 2" {paint}')
-
-    for i, (sunday, n) in enumerate(weeks):
-        x = x0 + i * BAR_PITCH + BAR / 2
-        lit = math.ceil(LEVELS * math.sqrt(n / peak)) if n else 0
-        o.append(bar(x, LEVELS, f'stroke="{BONE}" stroke-opacity="0.07"/>'))
-        if lit:
-            # Rises one segment at a time, then rests full. Like the meters,
-            # it starts dim rather than empty.
-            delay, step = start + i * 0.02, 0.04
-            dur = delay + lit * step
-            times = ";".join(["0"] + [f"{(delay + j * step) / dur:.3f}" for j in range(lit)])
-            ends = ";".join([str(base)] + [str(end(j)) for j in range(1, lit + 1)])
-            o.append(bar(x, lit, f'stroke="{VOLT}" stroke-opacity="0.12"/>'))
-            o.append(bar(x, lit, f'stroke="{VOLT}">') +
-                     f'<animate attributeName="y2" values="{ends}" keyTimes="{times}" '
-                     f'dur="{dur:.3f}s" calcMode="discrete" fill="freeze"/></line>')
-        last = sunday + dt.timedelta(days=6)
-        if last.day <= 7:   # the 1st of a month falls in this week
-            o.append(f'<text class="m k" x="{x - BAR / 2}" y="{base + 18}" font-size="9" fill="{DIM}">'
-                     f'{MONTHS[last.month - 1]}</text>')
-
-
 def streaks(days):
     counts = [n for _, n in days]
     longest = run = 0
@@ -196,8 +156,7 @@ def panel(days, commits, repos, today):
     current, longest = streaks(days)
 
     gh_top = 66
-    base = gh_top + 124 + 30 + LEVELS * 7
-    star_label = base + 18 + 54
+    star_label = gh_top + 124 + 32 + 26
     star_top = star_label + 20
     H = star_top + section_height(STAR_ROWS, None) + 32
     cut = 14
@@ -228,7 +187,6 @@ def panel(days, commits, repos, today):
         o.append(f'<text class="d" x="{x - 2}" y="{gh_top + 72}" font-size="40" fill="{BONE}">{value}</text>')
         o.append(f'<text class="m k" x="{x}" y="{gh_top + 100}" font-size="10" fill="{MUTED}">{caption}</text>')
         o.append(f'<text class="m k" x="{x}" y="{gh_top + 118}" font-size="10" fill="{DIM}">{sub}</text>')
-    weekly(o, base, days, 0.3)
 
     o.append(f'<rect x="40" y="{star_label - 26}" width="{W - 80}" height="1" fill="{LINE}"/>')
     label(o, star_label, "STARGAZERS")
